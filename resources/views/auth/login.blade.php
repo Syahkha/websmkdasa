@@ -33,7 +33,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-50 p-b-90">
-			<form method="POST" action="{{ route('login') }}">
+			<form class="login100-form validate-form flex-sb flex-w" method="POST" action="{{ route('login') }}">
                         @csrf
 					<span class="login100-form-title p-b-51">
 						Login
@@ -41,13 +41,13 @@
 
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-						<input class="input100"  id="email" type="email" name="email" placeholder="Username" autocomplete="off" required>
+						<input class="input100"  id="name" type="text" name="name" placeholder="Username" autocomplete="off">
 						<span class="focus-input100"></span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" id="password" type="password" name="password" placeholder="Password" required>
+						<input class="input100" id="password" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 					</div>
 					
