@@ -9,6 +9,14 @@
         </a>
       </li>
     </ul>
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-user-graduated"></i>
+          <span>Siswa</span>
+          </a>
+      </li>
+    </ul>
 
     <div id="content-wrapper">
 
