@@ -18,7 +18,7 @@ class User extends Controller
         $id=Auth::user()->id;
         $data=DB::select('select * from users where id=?',[$id]);
         if($data){
-            return view('user.setting_user',['data'=>$data]);
+            return view('user.setting_akun',['data'=>$data]);
         }
     }
 }
