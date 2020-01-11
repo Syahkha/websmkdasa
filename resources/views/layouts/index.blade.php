@@ -28,7 +28,7 @@
       @include('layouts.navbar')
       <div id="content-wrapper">
       
-        @yield('content')
+        @yield('konten')
         
       </div>
     </div>
