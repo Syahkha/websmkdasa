@@ -19,7 +19,7 @@
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown"> 
-          <a class="dropdown-item" href="{{url('setting_user')}}"><i class="fas fa-cog mr-2"></i>Setting Akun</a>
+          <a class="dropdown-item" href="{{url('set-akun')}}"><i class="fas fa-cog mr-2"></i>Setting Akun</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();

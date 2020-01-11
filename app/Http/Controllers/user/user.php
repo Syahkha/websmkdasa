@@ -14,11 +14,36 @@ class User extends Controller
     {
         $this->middleware('auth');
     }
-    function user(){
+    function akun(){
         $id=Auth::user()->id;
         $data=DB::select('select * from users where id=?',[$id]);
         if($data){
             return view('user.setting_akun',['data'=>$data]);
+        }
+    }
+    function editA(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+        ]);
+        $id=$request->id;
+        $name=$request->name;
+        $pass=Hash::make($request->password);
+        $email=$request->email;
+        if(empty($request->password)){
+            $data=DB::update('update users set name=?,email=? where id=?',[$name,$email,$id]);
+            if($data){
+                return redirect()->action('user\User@akun')->with('msg',"Berhasil Disimpan");
+            }else{
+                return redirect()->action('user\User@akun')->with('msg',"Gagal Disimpan");
+            }
+        }else{
+            $data=DB::update('update users set name=?,password=?,email=? where id=?',[$name,$pass,$email,$id]);
+            if($data){
+                return redirect()->action('user\User@akun')->with('msg',"Berhasil Disimpan");
+            }else{
+                return redirect()->action('user\User@akun')->with('msg',"Gagal Disimpan");
+            }
         }
     }
 }

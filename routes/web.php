@@ -20,7 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // setting user
-Route::get('setting_user','user\User@user');
+Route::get('set-akun','user\User@akun');
+Route::post('set-akun-data','user\User@editA');
 
 // settingweb
 Route::get('setweb','settingWeb@setweb');
