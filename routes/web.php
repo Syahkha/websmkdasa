@@ -25,3 +25,5 @@ Route::get('setting_user','user\User@user');
 // settingweb
 Route::get('setweb','settingWeb@setweb');
 
+// siswa
+Route::get('siswa','siswaController@siswa');
