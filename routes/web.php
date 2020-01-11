@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('user','UserController@user');
 Route::get('/home', 'HomeController@index')->name('home');
+
+// settingweb
+Route::get('setweb','settingWeb@setweb');
