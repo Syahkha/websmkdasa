@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SMK PLUS DARUSSALAM</title>
+  <title>SMK PLUS DARUSSALAM @yield('title')</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('user/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -24,10 +24,12 @@
 </head>
 <body id="page-top">    
       @include('layouts.header')   
-    <div class="warapper">
+      <div id="wrapper">
       @include('layouts.navbar')
-      <div class="container-fluid">
-        @yield('konten')
+      <div id="content-wrapper">
+      
+        @yield('content')
+        
       </div>
     </div>
     <script src="{{asset('user/vendor/jquery/jquery.min.js')}}"></script>
