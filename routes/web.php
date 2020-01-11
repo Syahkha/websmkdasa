@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('setting_user','user\User@user');
 
 // settingweb
-Route::get('setweb','settingWeb@setweb');
+Route::get('setweb','admin\SettingWebController@setweb');
 
 // siswa
 Route::get('siswa','siswaController@siswa');
