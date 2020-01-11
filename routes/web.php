@@ -25,6 +25,7 @@ Route::post('set-akun-data','user\User@editA');
 
 // settingweb
 Route::get('setweb','admin\SettingWebController@setweb');
+Route::post('update-setting','admin\SettingWebController@upset');
 
 // siswa
 Route::get('siswa','siswaController@siswa');
