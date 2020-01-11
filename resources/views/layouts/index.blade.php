@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SMK PLUS DARUSSALAM @title</title>
+  <title>SMK PLUS DARUSSALAM @yield('title')</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('user/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
