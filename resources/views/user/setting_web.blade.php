@@ -2,7 +2,7 @@
 @section('title')
 Setting Web
 @endsection
-@section('content')
+@section('konten')
 <div class="container-fluid">
 <div class="card">
             <div class="card-header">
