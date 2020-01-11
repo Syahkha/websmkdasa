@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// setting user
 Route::get('set_user','user\User@user');
 
 // settingweb
