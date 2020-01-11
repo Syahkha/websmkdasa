@@ -24,3 +24,4 @@ Route::get('set_user','user\User@user');
 
 // settingweb
 Route::get('setweb','settingWeb@setweb');
+
