@@ -15,11 +15,7 @@
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<<<<<<< HEAD
         {{Auth::user()->name}} 
-=======
-        {{Auth::user()->name}}
->>>>>>> 20568d5bce8518f2250310bfbf4f9f612bf4858d
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown"> 
