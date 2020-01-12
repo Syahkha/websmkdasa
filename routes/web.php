@@ -28,4 +28,15 @@ Route::get('setweb','admin\SettingWebController@setweb');
 Route::post('update-setting','admin\SettingWebController@upset');
 
 // siswa
-Route::get('siswa','siswaController@siswa');
+Route::get('input-siswa','admin\SiswaController@inputSiswa');
+Route::get('data-siswa','admin\SiswaController@dataSiswa');
+Route::get('data-siswi','admin\SiswaController@dataSiswi');
+
+// ppdb
+Route::get('daftar','admin\PpdbController@daftar');
+Route::get('ppdb-siswa','admin\PpdbController@ppdbSiswa');
+Route::get('ppdb-siswi','admin\PpdbController@ppdbSiswi');
+
+// blog
+Route::get('tulis','admin\BlogController@tulis');
+Route::get('data-tulis','admin\BlogController@dataPenulisan');
