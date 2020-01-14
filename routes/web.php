@@ -46,4 +46,6 @@ Route::get('ppdb-siswi','admin\PpdbController@ppdbSiswi');
 // blog
 Route::get('tulis','admin\BlogController@tulis');
 Route::post('input-kategori','admin\BlogController@inputKategori');
+Route::post('update-kategori','admin\BlogController@updateKategori');
+Route::post('post-artikel','admin\BlogController@inputArtikel');
 Route::get('data-tulis','admin\BlogController@dataPenulisan');
