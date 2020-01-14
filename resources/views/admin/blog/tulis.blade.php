@@ -6,6 +6,26 @@ Blog
 <div class="container-fluid">
 <div class="accordion" id="accordionExample">
   <div class="card">
+  
+  @if (Session('psn'))
+                    <div class="alert alert-primary alert-dismissible" role="alert">
+                    <p align="center">{{Session('psn')}}</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    </div>
+                    @endif 
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $er)
+                        <ul>
+                            <div class="alert alert-primary alert-dismissible" role="alert">
+                                <li>{{$er}}</li>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                            </div>            
+                        @endforeach
+                        </ul>
+                    @endif
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -21,43 +41,38 @@ Blog
          <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">No</th>
+      <th scope="col">Kategori</th>
+      <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
+  <?php $no=1; ?>
+  @foreach($data as $item)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">{{$no++}}</th>
+      <td>{{$item->kategori}}</td>
+      <td>
+      <a href="#" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
+                                                    <button type="button" data-toggle="modal" data-target="#" class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></button>
+      </td>
+      
     </tr>
   </tbody>
+  @endforeach
 </table>
          </div>
       <div class="col-md-6">
-      <form>
+      <form action="{{url('input-kategori')}}" method="post">
+      @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Kategori</label>
-    <input type="text" class="form-control"placeholder="Isi Kategori">
+    <input type="text" name="kategori" class="form-control"placeholder="Isi Kategori" required>
    
   </div>
   
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" name="menu" value="N" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Tambahkan Sebagai Menu</label>
   </div>
   <button type="submit" class="btn btn-primary">Simpan</button>
