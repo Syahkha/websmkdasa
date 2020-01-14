@@ -15,8 +15,10 @@ class BlogController extends Controller
     }
 
     function tulis(){
-        return view('admin.blog.tulis');
+      
+            return view('admin.blog.tulis');
     }
+    
 
     function dataPenulisan(){
         return view('admin.blog.data_tulis');

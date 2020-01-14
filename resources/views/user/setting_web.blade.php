@@ -101,7 +101,7 @@ Setting Web
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Logo</label>
-                                <input placeholder="Isi Logo" value="{{$item->logo}}" type="text" name="logo" id="" class="form-control">
+                                <input placeholder="Isi Logo" value="{{$item->logo}}" type="file" name="logo" id="" class="form-control">
                             </div>
                         </div>  
                         <div class="col-md-6">
@@ -113,7 +113,7 @@ Setting Web
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">icon</label>
-                                <input placeholder="Isi Icon" value="{{$item->icon}}" type="text" name="icon" id="" class="form-control">
+                                <input placeholder="Isi Icon" value="{{$item->icon}}" type="file" name="icon" id="" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -125,7 +125,7 @@ Setting Web
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Banner</label>
-                                <input placeholder="Isi Banner" value="{{$item->banner}}" type="text" name="banner" id="" class="form-control">
+                                <input placeholder="Isi Banner" value="{{$item->banner}}" type="file" name="banner" id="" class="form-control">
                             </div>
                         </div>  
                         <div class="col-md-6">

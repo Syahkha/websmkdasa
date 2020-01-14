@@ -45,7 +45,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{asset('user/js/sb-admin.min.js')}}"></script>
-
+    @yield('js')
     <!-- Demo scripts for this page-->
     <script src="{{asset('user/js/demo/datatables-demo.js')}}"></script>
     <script src="{{asset('user/js/demo/chart-area-demo.js')}}"></script>
