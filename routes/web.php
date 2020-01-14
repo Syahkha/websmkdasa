@@ -23,6 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('set-akun','user\User@akun');
 Route::post('set-akun-data','user\User@editA');
 
+// user
+Route::get('data-user','user\User@dataU');
+
 // settingweb
 Route::get('setweb','admin\SettingWebController@setweb');
 Route::post('update-setting','admin\SettingWebController@upset');

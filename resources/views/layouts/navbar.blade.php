@@ -38,7 +38,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('data-user')}}">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Akun</span>
             </a>
