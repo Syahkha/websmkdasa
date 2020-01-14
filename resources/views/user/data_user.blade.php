@@ -36,11 +36,11 @@
                     <table class="table table-striped table-bordered first">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th width="10px">No</th>
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Level</th>
-                                <th>Aksi</th>
+                                <th><center>Aksi</center></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -133,7 +133,7 @@
                                         <input class="form-control form-control-sm" type="email" id="email" name="email" required="" placeholder="E-mail" autocomplete="off">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control form-control-sm" id="password" name="password" type="password" required placeholder="Password" autocomplete="new-password">
+                                        <input class="form-control form-control-sm" id="password_tambah" name="password" type="password" required placeholder="Password" autocomplete="new-password">
                                     </div>
                                     <!-- <div class="form-group">
                                         <input id="password-confirm" name="password_confirmation" class="form-control form-control-sm" type="password" required placeholder="Confirm" autocomplete="new-password">
