@@ -1,3 +1,4 @@
+@if(Auth::user()->level=="Superadmin")
 @extends('layouts.index')
 @section('title')
     Data User
@@ -29,7 +30,7 @@
                 <h5 class="card-title">Data User</h5>
             </div>
             <div class="card-body">
-                <a href="{{url('add-user')}}" class="btn btn-info btn-sm" data-toogle="modal" data-target="#add_user"><i class="fas fa-pencil-alt"></i> Tambah User</a>
+                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_user" title="Tambah User"><i class="fas fa-pencil-alt"></i> Tambah User</button>
                 <div class="form-group"></div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
@@ -55,16 +56,109 @@
                                             @if($item->id==1)
 
                                             @else
-                                                <button data-toggle="modal" data-target="#edit{{$item->id}}" class="btn btn-success btn-sm"><i class="fas fa-wrench"></i></button>
+                                                <button data-toggle="modal" data-target="#edit{{$item->id}}" class="btn btn-success btn-sm" title="Edit User"><i class="fas fa-wrench"></i></button>
+                                                <a href="{{url('hapus-user').'/'.$item->id}}" class="btn btn-danger btn-sm" title="Hapus User"><i class="fas fa-trash"></i></a>
                                             @endif
                                         </center>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="edit{{$item->id}}">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <div class="modal-title"><h5 class="mb-1">Edit User</h5>
+                                                <p>Silahkan masukan informasi pengguna akun anda.</p></div>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{('edit-user')}}" method="post">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <input type="hidden" class="form-control form-control-sm" name="id" value="{{$item->id}}" required="" placehodler="ID">
+                                                        <input type="text" class="form-control form-control-sm" name="name" value="{{$item->name}}" required="" placeholder="Username" autocomplete="off" autofocus>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-sm" type="email" name="email" value="{{$item->email}}" required="" placeholder="E-Mail" autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-sm" id="password" name="password" type="password" placeholder="New Password (Isi Jika Ingin Mengedit)">
+                                                    </div>
+                                                    <!-- <div class="form-group">
+                                                        <input id="password-confirm" name="password_confirmation" class="form-control form-control-sm" type="password" placeholder="Confirm New Password (Isi Jika Mengedit)">
+                                                    </div> -->
+                                                    <div class="form-group">
+                                                        <select name="level" class="form-control form-control-sm">
+                                                        @if($item->level=="Superadmin")
+                                                            <option value="{{$item->level}}">Superadmin</option>
+                                                            <option value="Admin">Admin</option>
+                                                            <option value="User">User</option>
+                                                        @else
+                                                            @if($item->level=="Admin")
+                                                            <option value="{{$item->level}}">Admin</option>
+                                                            <option value="Superadmin">Superadmin</option>
+                                                            <option value="User">User</option>
+                                                            @elseif($item->level=="User")
+                                                            <option value="{{$item->level}}">User</option>
+                                                            <option value="Superadmin">Superadmin</option>
+                                                            <option value="Admin">Admin</option>
+                                                            @endif
+                                                        @endif
+                                                        </select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                            </div>
+                                                        <button class="form-control btn btn-clock btn-primary btn-sm" type="submit">Simpan</button>
+                                                    </div>
+                                                </form>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="modal fade" id="add_user">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title"><h5 class="mb-1">Tambah User</h5>
+                                <p>Silahkan masukkan informasi pengguna anda.</p></div>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{('tambah-user')}}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input class="form-control form-control-sm" type="text" id="name" name="name" required="" placeholder="Username" autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control form-control-sm" type="email" id="email" name="email" required="" placeholder="E-mail" autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control form-control-sm" id="password" name="password" type="password" required placeholder="Password" autocomplete="new-password">
+                                    </div>
+                                    <!-- <div class="form-group">
+                                        <input id="password-confirm" name="password_confirmation" class="form-control form-control-sm" type="password" required placeholder="Confirm" autocomplete="new-password">
+                                    </div> -->
+                                    <div class="form-group">
+                                        <select name="level" class="form-control form-control-sm">
+                                            <option value="Superadmin">Superadmin</option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="User">User</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                            </div>
+                                        <button class="form-control btn btn-block btn-primary" type="submit">Simpan</button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+@else
+    @section('konten')
+    <h4>Not Found <br>Error 153</h4>
+    @endsection
+@endif

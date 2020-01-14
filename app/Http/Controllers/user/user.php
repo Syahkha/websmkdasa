@@ -55,4 +55,58 @@ class User extends Controller
             return view('user.data_user',['data'=>$data]);
         }
     }
+    function tambahU(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'level'=>'required',
+        ]);
+        $name=$request->name;
+        $email=$request->email;
+        $pass=Hash::make($request->password);
+        $lv=$request->level;
+
+        $data=DB::insert('insert into users (name,email,password,level) values(?,?,?,?)',[$name,$email,$pass,$lv]);
+        if($data){
+            return redirect()->action('user\User@dataU')->with('msg',"Berhasil Disimpan");
+        }else{
+            return redirect()->action('user\User@dataU')->with('msg',"Gagal Disimpan");
+        }
+    }
+    function hapusU($id){
+        $data=DB::delete('delete from users where id=?',[$id]);
+        if($data){
+            return redirect()->action('user\User@dataU')->with("msg",'Berhasil Dihapus');
+        }else{
+            return redirect()->action('user\User@dataU')->with("msg",'Gagal Dihapus');
+        }
+    }
+    function editU(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'level'=>'required',
+        ]);
+        $id=$request->id;
+        $name=$request->name;
+        $pass=Hash::make($request->password);
+        $email=$request->email;
+        $lv=$request->level;
+        if(empty($request->password)){
+            $data=DB::update('update users set name=?,email=?,level=? where id=?',[$name,$email,$lv,$id]);
+            if($data){
+                return redirect()->action('user\User@dataU')->with('msg',"Berhasil Disimpan");
+            }else{
+                return redirect()->action('user\User@dataU')->with('msg',"Gagal Disimpan");
+            }
+        }else{
+            $data=DB::update('update users set name=?,password=?,email=?,level=? where id=?',[$name,$pass,$email,$lv,$id]);
+            if($data){
+                return redirect()->action('user\User@dataU')->with('msg',"Berhasil Disimpan");
+            }else{
+                return redirect()->action('user\User@dataU')->with('msg',"Gagal Disimpan");
+            }
+        }
+    }
 }

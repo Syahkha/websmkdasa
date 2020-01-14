@@ -25,6 +25,9 @@ Route::post('set-akun-data','user\User@editA');
 
 // user
 Route::get('data-user','user\User@dataU');
+Route::get('hapus-user/{id}','user\User@hapusU');
+Route::post('tambah-user','user\User@tambahU');
+Route::post('edit-user','user\User@editU');
 
 // settingweb
 Route::get('setweb','admin\SettingWebController@setweb');
