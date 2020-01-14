@@ -16,9 +16,9 @@ class SettingWebController extends Controller
     public function setweb(){
 
         $data=DB::select('select * from setting');
-        if($data){
+       
             return view('user.setting_web',['data'=>$data]);
-        }
+        
     }
 
     function upset(Request $request){
