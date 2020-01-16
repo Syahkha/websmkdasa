@@ -49,3 +49,6 @@ Route::post('input-kategori','admin\BlogController@inputKategori');
 Route::post('update-kategori','admin\BlogController@updateKategori');
 Route::post('post-artikel','admin\BlogController@inputArtikel');
 Route::get('data-tulis','admin\BlogController@dataPenulisan');
+Route::get('lock-artikel/{id}/{y}','admin\BlogController@lockA');
+Route::post('update-artikel','admin\BlogController@updateArtikel');
+Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');

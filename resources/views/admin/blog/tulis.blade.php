@@ -27,12 +27,14 @@ Blog
             </ul>
             @endif
             <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="true" aria-controls="collapseOne">
-                        KATEGORI
-                    </button>
-                </h2>
+                               <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+                                <div class="row">
+                                    <div class="col">
+                                     Kategori
+                                    </div>
+                                    <div class="col-auto collapse-icon"></div>
+                                </div>
+                            </a>
             </div>
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -131,12 +133,14 @@ Blog
         </div>
         <div class="card">
             <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        TULIS ARTIKEL
-                    </button>
-                </h2>
+            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="collapsed">
+                                <div class="row">
+                                    <div class="col">
+                                     Tulis Artikel
+                                    </div>
+                                    <div class="col-auto collapse-icon"></div>
+                                </div>
+                            </a>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 
