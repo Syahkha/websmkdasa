@@ -17,8 +17,7 @@
                 <i class="fas fa-fw fa-address-card"></i>
                 <span>Siswa</span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="pagesDropdown" x-placement="bottom-start"
-                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(5px, 63px, 0px);">
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <a class="dropdown-item" href="{{url('input-siswa')}}">Input Siswa</a>
                 <a class="dropdown-item" href="{{url('data-siswa')}}">Data Siswa</a>
                 <a class="dropdown-item" href="{{url('data-siswi')}}">Data siswi</a>
@@ -30,8 +29,7 @@
                 <i class="fas fa-fw fa-address-card"></i>
                 <span>PPDB</span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="pagesDropdown" x-placement="bottom-start"
-                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(5px, 63px, 0px);">
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <a class="dropdown-item" href="{{url('daftar')}}">Daftar Siswa</a>
                 <a class="dropdown-item" href="{{url('ppdb-siswa')}}">PPDB Siswa</a>
                 <a class="dropdown-item" href="{{url('ppdb-siswi')}}">PPDB siswi</a>

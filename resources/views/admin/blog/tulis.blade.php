@@ -15,6 +15,7 @@ Blog
                 </button>
             </div>
             @endif
+            <!-- cek -->
             @if ($errors->any())
             @foreach ($errors->all() as $er)
             <ul>
@@ -26,7 +27,7 @@ Blog
                 @endforeach
             </ul>
             @endif
-            <div class="card-header" id="headingOne">
+            <div class="card-header py-3 collapsed" id="headingOne">
                                <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
                                 <div class="row">
                                     <div class="col">
