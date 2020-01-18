@@ -352,7 +352,7 @@
                                     <div class="form-group">
                                         <label for="nis">Tanggal Lahir</label>
                                         <div class="input-group date">
-                                            <input type="text" readonly class="form-control pull-right" name="tgl" placeholder="Tanggal Lahir Contoh : 01-01-2000" id="datapicker">
+                                            <input type="text" readonly class="form-control pull-right" name="tgl" placeholder="Tanggal Lahir Contoh : 01-01-2000" id="datepicker">
                                         </div>
                                     </div>
                                 </div>
