@@ -27,18 +27,42 @@ Data Tulis
         <div class="card-header py-3">
             <h5 class="m-0 font-weight-bold text-primary">Data Artikel</h5>
         </div>
+
         <div class="card-body">
             <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Tanggal</th>
-                        <th scope="col">Kategori</th>
-                        <th scope="col">Posted By</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                    <a href="{{url('tulis')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Buat Artikel</a>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="pull-right mb-3">
+                            <form class="form" method="POST" action="{{url('cari-artikel')}}">
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <input required type="text" name="cari" placeholder="Cari Artikel"
+                                        class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Judul</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Kategori</th>
+                            <th scope="col">Posted By</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                </div>
                 <tbody>
                     <?php $no=1; ?>
                     @foreach($artikel as $post)
@@ -113,7 +137,8 @@ Data Tulis
                                                 <div class="form-group">
                                                     <label for="kategori">Pilih Kategori</label>
                                                     <select class="form-control" name="kategori" id="kategori">
-                                                    <option selected value="{{$post->id}}">{{$post->kategori}}</option>
+                                                        <option selected value="{{$post->id}}">{{$post->kategori}}
+                                                        </option>
                                                         @foreach ($kategori as $item)
                                                         <option value="{{$item->id}}">{{$item->kategori}}</option>
                                                         @endforeach

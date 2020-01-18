@@ -42,7 +42,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="nama" placeholder="{{date('d/m/Y')}}" class="form-control-sm form-control" required>
+                                <input type="text" name="nama" placeholder="{{date('D,d/m/Y')}}" class="form-control-sm form-control" required>
                             </div>
                         </div>
                         <div class="col-md-4">
