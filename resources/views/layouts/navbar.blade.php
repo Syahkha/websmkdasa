@@ -46,19 +46,19 @@
           </div>
         </div>
       </li>
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#sm_psb" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-users"></i>
           <span>PPDB</span>
         </a>
         <div id="sm_psb" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">            
-            <a class="collapse-item" href="{{url('daftar')}}">Daftarkan Santri</a>
-            <a class="collapse-item" href="{{url('ppdb-siswa')}}">Data PSB Santri Putra</a>
-            <a class="collapse-item" href="{{url('ppdb-siswi')}}">Data PSB Santri Putri</a>
+            <a class="collapse-item" href="{{url('daftar')}}">Daftarkan Siswa</a>
+            <a class="collapse-item" href="{{url('ppdb-siswa')}}">Data PSB Siswa Putra</a>
+            <a class="collapse-item" href="{{url('ppdb-siswi')}}">Data PSB Siswa Putri</a>
           </div>
         </div>
-      </li> -->
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="{{url('data-user')}}">
           <i class="fas fa-fw fa-user"></i>
