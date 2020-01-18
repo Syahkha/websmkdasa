@@ -26,7 +26,7 @@
                         <div class="mb-4 btn btn-outline-info" data-toggle="modal" data-target="#addw"><i class="fa fa-plus"></i>Tambah Data Wali</div>
                         <a href="{{url('download-excel')}}" class="mb-4 btn btn-outline-info"><i class="fa fa-id-badge"></i> Download Data Wali</a>
                     </div>
-                    <div class="modal-fade" id="addw">
+                    <div class="modal fade" id="addw">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
