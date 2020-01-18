@@ -48,7 +48,7 @@ Daftar Siswa
                                 <input type="text" name="hari_tanggal" placeholder="<?php
                                 $tanggal = time();
                                     echo ''.indonesian_date($tanggal, 'l, d/F/Y'); 
-                                ?>" class="form-control-sm form-control" readonly required>
+                                ?>" class="form-control" readonly required>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -372,17 +372,17 @@ Daftar Siswa
                             <label for="jenjang_pendidikan">Jenjang Pendidikan :</label>
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="Tidak Sekolah"> Tidak Sekolah<br>
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="TK"> TK<br>
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="SD"> SD<br>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="SMP"> SMP<br>
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="SMA"> SMA<br>
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="D1"> D1<br>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="D2"> D2<br>
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="D3"> D3<br>
                                         <input type="radio" name="jenjang_pendidikan_ayah" value="S1"> S1<br>
@@ -449,17 +449,17 @@ Daftar Siswa
                             <label for="jenjang_pendidikan">Jenjang Pendidikan :</label>
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="Tidak Sekolah"> Tidak Sekolah<br>
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="TK"> TK<br>
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="SD"> SD<br>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="SMP"> SMP<br>
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="SMA"> SMA<br>
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="D1"> D1<br>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="D2"> D2<br>
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="D3"> D3<br>
                                         <input type="radio" name="jenjang_pendidikan_ibu" value="S1"> S1<br>
