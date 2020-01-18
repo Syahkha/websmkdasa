@@ -19,9 +19,9 @@ Daftar Siswa
                 </button>
             </div>
         @endif
-        <div class="card card-primary">
-            <div class="card-header">
-                <div class="card-title">
+        <div class="card shadow card-primary">
+            <div class="card-header py-3">
+                <div class="m-0 font-weight-bold text-primary">
                     Daftar Siswa
                 </div>
             </div>
@@ -32,72 +32,215 @@ Daftar Siswa
                         <div class="col-md-12">
                             <center>
                                 <legend></legend>
-                                <legend>ISIAN FORM SISWA</legend>
+                                <legend>INPUT SISWA</legend>
                             </center>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <label for="nis">Hari, Tanggal</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <input type="text" name="nama" placeholder="{{date('d/m/Y')}}" class="form-control-sm form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <label for="nis">Nama</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <label for="nis">Nama</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <label for="nis">Nama</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <label for="nis">Nama</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-group">
-                                <label for="nis">Nama Lengkap</label>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" required>
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nis">Nama</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="nama" placeholder="" class="form-control" required>
+                            </div>
+                        </div>
+                        
                     </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script src="{{asset('admin/js/bootstrap-datepicker.min.js')}}"></script>
+    <script>
+        $("[id='gj']").on('keyup', function(){
+        var n = parseInt($(this).val().replace(/\D/g,''),10);
+        $(this).val(n.toLocaleString());
+        }); 
+        $('.tgl').datepicker({
+            format: 'yyyy-mm-dd',
+        });
+    </script>
 @endsection
