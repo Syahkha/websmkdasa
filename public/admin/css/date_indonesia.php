@@ -1,3 +1,4 @@
+<?php
 /**
   * Rubah format tanggal ke format indonesia dengan nama bulan dan hari indonesia
   * @param  string $timestamp   [bisa dalam bentuk timestamp atau unix_date]
@@ -33,14 +34,13 @@
         '/Jan[^uary]/','/Feb[^ruary]/','/Mar[^ch]/','/Apr[^il]/','/May/',
         '/Jun[^e]/','/Jul[^y]/','/Aug[^ust]/','/Sep[^tember]/','/Oct[^ober]/',
         '/Nov[^ember]/','/Dec[^ember]/','/January/','/February/','/March/',
-        '/April/','/June/','/July/','/August/','/September/','/October/',
+        '/April/','/May/','/June/','/July/','/August/','/September/','/October/',
         '/November/','/December/',
     );
     $replace = array ( 'Sen','Sel','Rab','Kam','Jum','Sab','Min',
         'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu',
-        'Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des',
-        'Januari','Februari','Maret','April','Juni','Juli','Agustus','September',
-        'Oktober','November','Desember',
+        '01','02','03','04','05','06','07','08','09','10','11','12',
+        '01','02','03','04','05','06','07','08','09','10','11','12'
     );
     $date = date ($date_format, $timestamp);
     $date = preg_replace ($pattern, $replace, $date);
