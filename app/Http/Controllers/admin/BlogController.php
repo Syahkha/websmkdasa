@@ -178,9 +178,9 @@ class BlogController extends Controller
                 ->paginate(10);
         $kat=DB::select('select * from kategori');
         if($data){
-            return view('admin\BlogController@dataPenulisan',['artikel'=>$data,'kategori'=>$kat,'msg'=>'Kembali']);
+            return view('admin.blog.data_tulis',['artikel'=>$data,'kategori'=>$kat,'msg'=>'Kembali']);
         }else{
-            return view('admin\BlogController@dataPenulisan',['artikel'=>$data,'kategori'=>$kat,'msg'=>'Post Tidak Ada']);
+            return view('admin.blog.data_tulis',['artikel'=>$data,'kategori'=>$kat,'msg'=>'Post Tidak Ada']);
         }
         }
     }

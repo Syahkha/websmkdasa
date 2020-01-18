@@ -4,14 +4,8 @@ Setting Web
 @endsection
 @section('konten')
 <div class="container-fluid">
-<div class="card">
-            <div class="card-header">
-                <h5 class="card-title font-weight-bold text-primary">Setting Website</h5>
-            </div>
-            <div class="card-body">
-
-            @if (Session('msg'))
-                    <div class="alert alert-primary alert-dismissible" role="alert">
+@if (Session('msg'))
+                    <div class="alert shadow alert-primary alert-dismissible" role="alert">
                     <p align="center">{{Session('msg')}}</p>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -29,6 +23,13 @@ Setting Web
                         @endforeach
                         </ul>
                     @endif
+<div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-primary">Setting Website</h5>
+            </div>
+            <div class="card-body">
+
+          
 
                 <form action="{{url('update-setting')}}" method="post">                 
                 @csrf 

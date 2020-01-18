@@ -25,9 +25,9 @@
                 </ul>
             @endforeach
         @endif
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Data User</h5>
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-primary">Data User</h5>
             </div>
             <div class="card-body">
                 <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_user" title="Tambah User"><i class="fas fa-pencil-alt"></i> Tambah User</button>
