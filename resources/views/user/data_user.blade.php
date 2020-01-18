@@ -30,7 +30,7 @@
                 <h5 class="m-0 font-weight-bold text-primary">Data User</h5>
             </div>
             <div class="card-body">
-                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#add_user" title="Tambah User"><i class="fas fa-pencil-alt"></i> Tambah User</button>
+                <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#add_user" title="Tambah User"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah User</button>
                 <div class="form-group"></div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
