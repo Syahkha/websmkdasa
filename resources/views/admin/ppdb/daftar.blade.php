@@ -1,3 +1,6 @@
+<?php
+    include('admin/css/date_indonesia.php');
+?>
 @extends('layouts.index')
 @section('title')
 Daftar Siswa
@@ -42,7 +45,14 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
+<<<<<<< HEAD
                                 <input type="text" name="nama" placeholder="{{date('D,d/m/Y')}}" class="form-control-sm form-control" required>
+=======
+                                <input type="text" name="nama" placeholder="<?php
+                                $tanggal = time();
+                                    echo ''.indonesian_date($tanggal, 'l, d F Y'); 
+                                ?>" class="form-control-sm form-control" readonly required>
+>>>>>>> db07ad11d84683d8c655bc74f0599c936af45a6b
                             </div>
                         </div>
                         <div class="col-md-4">
