@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2020 at 07:14 AM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Jan 18, 2020 at 05:16 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,8 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `artikel` (
   `id` bigint(20) NOT NULL,
   `judul` varchar(200) NOT NULL,
-  `judul_url` text,
-  `artikel` longtext,
+  `judul_url` text DEFAULT NULL,
+  `artikel` longtext DEFAULT NULL,
   `tanggal` varchar(100) NOT NULL,
   `id_admin` varchar(100) NOT NULL,
   `show` enum('Y','N') NOT NULL,
@@ -82,22 +82,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `orang_tua` (
   `id` bigint(20) NOT NULL,
-  `no_kk` varchar(191) DEFAULT NULL,
-  `ayah` varchar(191) DEFAULT NULL,
-  `ktp_ayah` varchar(191) DEFAULT NULL,
-  `pendidikan_ayah` varchar(191) DEFAULT NULL,
-  `pekerjaan_ayah` varchar(191) DEFAULT NULL,
-  `ibu` varchar(191) DEFAULT NULL,
-  `ktp_ibu` varchar(191) DEFAULT NULL,
-  `pendidikan_ibu` varchar(191) DEFAULT NULL,
-  `pekerjaan_ibu` varchar(191) DEFAULT NULL,
-  `penghasilan_wali` varchar(191) DEFAULT NULL,
-  `telepon_wali` varchar(191) DEFAULT NULL,
-  `alamat_wali` varchar(191) DEFAULT NULL,
-  `desa` varchar(191) DEFAULT NULL,
-  `kecamatan` varchar(191) DEFAULT NULL,
-  `kota` varchar(191) DEFAULT NULL,
-  `provinsi` varchar(191) DEFAULT NULL
+  `nama_ayah` varchar(50) DEFAULT NULL,
+  `tahun_lahir_ayah` varchar(50) DEFAULT NULL,
+  `jenjang_pendidikan_ayah` varchar(50) DEFAULT NULL,
+  `pekerjaan_ayah` varchar(50) DEFAULT NULL,
+  `penghasilan_ayah` varchar(50) DEFAULT NULL,
+  `kebutuhan_khusus_ayah` varchar(50) DEFAULT NULL,
+  `nama_ibu` varchar(50) DEFAULT NULL,
+  `tahun_lahir_ibu` varchar(50) DEFAULT NULL,
+  `jenjang_pendidikan_ibu` varchar(50) DEFAULT NULL,
+  `pekerjaan_ibu` varchar(50) DEFAULT NULL,
+  `penghasilan_ibu` varchar(50) DEFAULT NULL,
+  `kebutuhan_khusus_ibu` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -138,13 +134,13 @@ CREATE TABLE `setting` (
   `facebook` varchar(50) NOT NULL,
   `instagram` varchar(50) NOT NULL,
   `twitter` varchar(50) NOT NULL,
-  `youtube` text,
+  `youtube` text DEFAULT NULL,
   `alamat` varchar(50) NOT NULL,
   `kota` varchar(50) NOT NULL,
   `provinsi` varchar(50) NOT NULL,
-  `logo` text,
-  `icon` text,
-  `banner` text,
+  `logo` text DEFAULT NULL,
+  `icon` text DEFAULT NULL,
+  `banner` text DEFAULT NULL,
   `psb` enum('Y','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -156,22 +152,37 @@ CREATE TABLE `setting` (
 
 CREATE TABLE `siswa` (
   `id` bigint(20) NOT NULL,
-  `nis` varchar(191) DEFAULT NULL,
-  `idortu` varchar(191) DEFAULT NULL,
-  `idtahun` varchar(191) DEFAULT NULL,
+  `No_pendaftaran` int(11) DEFAULT NULL,
   `nama_lengkap` varchar(191) DEFAULT NULL,
+  `gender` enum('Laki-Laki','Perempuan') DEFAULT NULL,
+  `nisn` int(11) DEFAULT NULL,
   `ttl` varchar(191) DEFAULT NULL,
-  `asal` varchar(191) DEFAULT NULL,
+  `nik` varchar(191) DEFAULT NULL,
+  `agama` varchar(191) DEFAULT NULL,
+  `kebutuhan_khusus` varchar(191) DEFAULT NULL,
   `alamat` varchar(191) DEFAULT NULL,
-  `desa` varchar(191) DEFAULT NULL,
+  `rt` int(11) DEFAULT NULL,
+  `rw` int(11) DEFAULT NULL,
+  `dusun` varchar(191) DEFAULT NULL,
+  `kelurahan` varchar(191) DEFAULT NULL,
   `kecamatan` varchar(191) DEFAULT NULL,
-  `kota` varchar(191) DEFAULT NULL,
-  `provinsi` varchar(191) DEFAULT NULL,
-  `telp` varchar(191) DEFAULT NULL,
-  `gender` varchar(191) DEFAULT NULL,
-  `foto` text,
-  `psb` enum('terima','belum','tolak') NOT NULL,
-  `keterangan` int(11) NOT NULL
+  `kode_pos` int(11) DEFAULT NULL,
+  `jenis_tinggal` varchar(191) DEFAULT NULL,
+  `alat_transportasi` varchar(191) DEFAULT NULL,
+  `telp` int(12) DEFAULT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `no_peserta_un` varchar(50) DEFAULT NULL,
+  `penerima_kip` enum('Y','N') DEFAULT NULL,
+  `no_kip` varchar(191) DEFAULT NULL,
+  `berat_badan` varchar(191) DEFAULT NULL,
+  `tinggi_badan` varchar(191) DEFAULT NULL,
+  `jarak_rumah_sekolah` varchar(191) DEFAULT NULL,
+  `waktu_tempuh` varchar(191) DEFAULT NULL,
+  `jumlah_saudara` varchar(191) DEFAULT NULL,
+  `idortu` int(11) DEFAULT NULL,
+  `idtahun` int(11) DEFAULT NULL,
+  `psb` enum('terima','belum','tolak') DEFAULT NULL,
+  `status` enum('lulus','belum') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -185,6 +196,7 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
+  `level` enum('Superadmin','Admin','User') COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -195,8 +207,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$3szJkhzRdBuEZzNdWlgoOuZeiGj1GaF1hVY9rnrXgWDrv9DlVNdCS', NULL, '2020-01-08 08:35:16', '2020-01-08 08:35:16');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `level`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@gmail.com', NULL, 'Superadmin', '$2y$10$dZL3.RaUj3HZ01rpqBoOBuIODEjWjDLsa6J3kMPZ7UeZrx8Ukjnnu', NULL, '2020-01-08 08:35:16', '2020-01-08 08:35:16');
 
 --
 -- Indexes for dumped tables
