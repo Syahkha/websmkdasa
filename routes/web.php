@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -53,3 +53,6 @@ Route::get('lock-artikel/{id}/{y}','admin\BlogController@lockA');
 Route::post('update-artikel','admin\BlogController@updateArtikel');
 Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');
 Route::post('cari-artikel','admin\BlogController@cari');
+
+//front
+Route::get('/','user\frontendcontroller@index');

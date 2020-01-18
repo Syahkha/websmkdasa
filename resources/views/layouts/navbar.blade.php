@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-2">PP Darussalam</div>
+        <div class="sidebar-brand-text mx-2">SMK Darussalam</div>
       </a>
 
       <!-- Divider -->
