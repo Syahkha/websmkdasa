@@ -6,7 +6,7 @@ Setting Web
 <div class="container-fluid">
 <div class="card">
             <div class="card-header">
-                <div class="card-title">Setting Website</div>
+                <h5 class="card-title font-weight-bold text-primary">Setting Website</h5>
             </div>
             <div class="card-body">
 

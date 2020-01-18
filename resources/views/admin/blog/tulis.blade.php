@@ -129,7 +129,7 @@ Blog
     </div>
     <div class="card mb-3">
         <div class="card-header">
-            <h5 class="card-title"> Menulis Artikel</h5>
+            <h5 class="card-title font-weight-bold text-primary"> Menulis Artikel</h5>
         </div>
 
         <div class="card-body">
