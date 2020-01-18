@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{asset('admin/css/bootstrap-datepicker.min.css')}}">
 </head>
 
 <body id="page-top">
@@ -51,6 +51,8 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('admin/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('admin/js/demo/chart-pie-demo.js')}}"></script>
+
+    @yield('js')
 
 </body>
 

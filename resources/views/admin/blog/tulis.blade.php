@@ -5,7 +5,7 @@ Blog
 @section('konten')
 <div class="container-fluid">
 
-    <div class="card mb-3">
+    <div class="card shadow mb-3">
 
         @if (Session('psn'))
         <div class="alert alert-primary alert-dismissible" role="alert">
@@ -127,9 +127,9 @@ Blog
         </div>
 
     </div>
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="card-title"> Menulis Artikel</h5>
+    <div class="card shadow mb-3">
+        <div class="card-header py-3">
+            <h5 class="m-0 font-weight-bold text-primary"> Menulis Artikel</h5>
         </div>
 
         <div class="card-body">
