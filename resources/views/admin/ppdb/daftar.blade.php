@@ -39,7 +39,7 @@ Daftar Siswa
                             </center>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Hari, Tanggal</label>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Nomor Pendaftaran</label>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Nama</label>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Jenis Kelamin</label>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">NISN</label>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Tempat Lahir</label>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Tanggal Lahir</label>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">NIK *)</label>
                             </div>
                         </div>
@@ -129,7 +129,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Agama</label>
                             </div>
                         </div>
@@ -151,7 +151,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Kebutuhan Khusus</label>
                             </div>
                         </div>
@@ -161,7 +161,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Alamat</label>
                             </div>
                         </div>
@@ -171,7 +171,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">RT</label>
                             </div>
                         </div>
@@ -181,7 +181,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">RW</label>
                             </div>
                         </div>
@@ -191,7 +191,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Dusun</label>
                             </div>
                         </div>
@@ -201,7 +201,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Kelurahan</label>
                             </div>
                         </div>
@@ -211,7 +211,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Kecamatan</label>
                             </div>
                         </div>
@@ -221,7 +221,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Kode POS</label>
                             </div>
                         </div>
@@ -231,7 +231,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Jenis Tinggal</label>
                             </div>
                         </div>
@@ -248,7 +248,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Alat Transportasi</label>
                             </div>
                         </div>
@@ -258,7 +258,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Telepon *)</label>
                             </div>
                         </div>
@@ -268,7 +268,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">HP *)</label>
                             </div>
                         </div>
@@ -278,7 +278,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">E-Mail</label>
                             </div>
                         </div>
@@ -288,7 +288,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">No. Peserta UN</label>
                             </div>
                         </div>
@@ -298,7 +298,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Penerima KIP</label>
                             </div>
                         </div>
@@ -315,7 +315,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">No. KIP</label>
                             </div>
                         </div>
@@ -330,7 +330,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Data Ayah</label>
                             </div>
                         </div>
@@ -347,9 +347,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
-                                
-                            </div>
+                            
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
@@ -364,9 +362,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
-
-                            </div>
+                            
                         </div>
                         <div class="col-md-8">
                             <label for="jenjang_pendidikan">Jenjang Pendidikan :</label>
@@ -391,9 +387,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
-
-                            </div>
+                            
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
@@ -403,11 +397,11 @@ Daftar Siswa
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                
+
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Data Ibu</label>
                             </div>
                         </div>
@@ -424,9 +418,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
-                                
-                            </div>
+                            
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
@@ -441,9 +433,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
-
-                            </div>
+                            
                         </div>
                         <div class="col-md-8">
                             <label for="jenjang_pendidikan">Jenjang Pendidikan :</label>
@@ -482,7 +472,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Berat Badan</label>
                             </div>
                         </div>
@@ -492,7 +482,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Tinggi Badan</label>
                             </div>
                         </div>
@@ -502,7 +492,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Jarak Rumah ke Sekolah</label>
                             </div>
                         </div>
@@ -519,7 +509,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Waktu Tempuh ke Sekolah</label>
                             </div>
                         </div>
@@ -529,7 +519,7 @@ Daftar Siswa
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="nis">Jumlah Saudara Kandung</label>
                             </div>
                         </div>
