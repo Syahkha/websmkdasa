@@ -239,14 +239,45 @@
                                                                 <input type="text" value="{{$item->desa}}" placeholder="Isikan Desa Wali" name="desa" class="form-control">
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="nis">Kecamatan</label>
+                                                                <input type="text" value="{{$item->kec}}"  placeholder="Isikan Kecamatan Wali" name="kec" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="nis">Kota</label>
+                                                                <input type="text" value="{{$item->kota}}"  placeholder="Isikan Kota Wali" name="kot" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="nis">Provinsi</label>
+                                                                <input type="text" value="{{$item->prov}}"  placeholder="Isikan Provinsi Wali" name="prov" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="nis">Penghasilan</label>
+                                                                <input type="text" id="gj" value="{{$item->penghasilan_wali}}"   placeholder="Isikan Penghasilan" onkeyup="decimal()" name="pgh" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 ">
+                                                            <div class="text-right">
+                                                                <button type="submit" class="btn btn-outline-primary"><span class="fa fa-check-square-o"></span> Simpan</button>
+                                                            </div>
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
       </div>
