@@ -24,9 +24,9 @@
                 </ul>
             @endforeach
         @endif
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Setting User</h5>
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-primary">Setting User</h5>
             </div>
             <div class="card-body">
                 <form action="{{url('set-akun-data')}}" method="post">
