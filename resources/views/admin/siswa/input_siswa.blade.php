@@ -3,7 +3,7 @@
     Input Siswa
 @endsection
 @section('css')
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="{{asset('admin/css/bootstrap-datepicker.min.css')}}">
 @endsection
 @section('konten')
     <div class="container-fluid">
@@ -338,16 +338,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nis">Tahun Masuk</label>
-                                        <select name="jj" id="jj" class="form-control">
-                                            @foreach ($th as $item)
-                                        <option value="{{$item->id}}">{{$item->tahun.'-'.$item->jenjang}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <label for="nis">Nama Lengkap</label>
                                         <input type="text" placeholder="Isikan Nama Lengkap" name="nama" class="form-control">
                                     </div>
@@ -487,17 +477,6 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="nis">Tahun Masuk</label>
-                                                            <select name="jj" id="jj" class="form-control">
-                                                                <option value="{{$item->idtahun}}">{{$item->tahun.'-'.$item->jenjang}}</option>
-                                                                @foreach ($th as $iteme)
-                                                                    <option value="{{$iteme->id}}">{{$iteme->tahun.'-'.$iteme->jenjang}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
                                                             <label for="nis">Nama Lengkap</label>
                                                             <input type="text" value="{{$item->nama_lengkap}}" placeholder="Isikan Nama Lengkap" name="nama" class="form-control">
                                                         </div>
@@ -585,7 +564,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <p class="text-center">{{$siswa->links()}}</p>
                 </div>
             </div>
         </div>
@@ -593,4 +571,25 @@
   </div>  
 </div>
 </div>
+@endsection
+@section('js')
+<script src="{{asset('admin/js/bootstrap-datepicker.min.js')}}"></script>
+<script>
+    $('#datepicker').datepicker({
+    format: 'dd-mm-yyyy',
+    }); 
+    $('input#gj').keyup(function(event) {
+        // skip for arrow keys
+        if(event.which >= 37 && event.which <= 40){
+        event.preventDefault();
+        }
+
+        $(this).val(function(index, value) {
+        return value
+            .replace(/\D/g, "")  
+            .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",")
+        ;
+        });
+    });
+</script>
 @endsection
