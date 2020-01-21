@@ -43,21 +43,21 @@
                             <div class="col-12 col-md-4">
                                 <div class="single-top-features d-flex align-items-center justify-content-center">
                                     <i class="icon-agenda-1"></i>
-                                    <h5>Online Courses</h5>
+                                    <h5>Akreditasi A</h5>
                                 </div>
                             </div>
                             <!-- Single Top Features -->
                             <div class="col-12 col-md-4">
                                 <div class="single-top-features d-flex align-items-center justify-content-center">
                                     <i class="icon-assistance"></i>
-                                    <h5>Amazing Teachers</h5>
+                                    <h5>Biaya Terjangkau</h5>
                                 </div>
                             </div>
                             <!-- Single Top Features -->
                             <div class="col-12 col-md-4">
                                 <div class="single-top-features d-flex align-items-center justify-content-center">
                                     <i class="icon-telephone-3"></i>
-                                    <h5>Great Support</h5>
+                                    <h5>Fasilitas Lengkap</h5>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
             </div>
             <div class="row">
                 <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-6">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
                         <div class="course-icon">
                             <i class="icon-id-card"></i>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-6">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
                         <div class="course-icon">
                             <i class="icon-worldwide"></i>
@@ -104,13 +104,24 @@
                     </div>
                 </div>
                 <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-6">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">
                         <div class="course-icon">
                             <i class="icon-map"></i>
                         </div>
                         <div class="course-content">
                             <h4>Teknik Sepeda Motor</h4>
+                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-6">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="course-icon">
+                            <i class="icon-id-card"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Multimedia</h4>
                             <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
                         </div>
                     </div>
