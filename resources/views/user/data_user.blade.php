@@ -1,4 +1,4 @@
-@if(Auth::user()->level=="Superadmin")
+@if(Auth::user()->level=="Developer" || Auth::user()->level=="Superadmin" || Auth::user()->level=="Admin")
 @extends('layouts.index')
 @section('title')
     Data User
@@ -30,7 +30,7 @@
                 <h5 class="m-0 font-weight-bold text-primary">Data User</h5>
             </div>
             <div class="card-body">
-                <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#add_user" title="Tambah User"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah User</button>
+                <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#add_user" title="Tambah User"><i class="fas fa-plus fa-sm"></i> Tambah User</button>
                 <div class="form-group"></div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
@@ -53,11 +53,24 @@
                                     <td>{{$item->level}}</td>
                                     <td>
                                         <center>
-                                            @if($item->id==1)
+                                            @if($item->level=='Developer')
+
+                                            @elseif($item->id==1)
 
                                             @else
-                                                <button data-toggle="modal" data-target="#edit{{$item->id}}" class="btn btn-success btn-sm" title="Edit User"><i class="fas fa-wrench"></i></button>
-                                                <a href="{{url('hapus-user').'/'.$item->id}}" class="btn btn-danger btn-sm" title="Hapus User"><i class="fas fa-trash"></i></a>
+                                                @if(Auth::user()->level=="Developer" || Auth::user()->level=="Superadmin")
+                                                    <button data-toggle="modal" data-target="#edit{{$item->id}}" class="btn btn-success btn-sm" title="Edit User"><i class="fas fa-wrench"></i></button>
+                                                    <a href="{{url('hapus-user').'/'.$item->id}}" class="btn btn-danger btn-sm" title="Hapus User"><i class="fas fa-trash"></i></a>
+                                                @elseif(Auth::user()->level=="Developer" || Auth::user()->level=="Admin")
+                                                    @if($item->level=='Superadmin')
+                                                        
+                                                    @elseif($item->level=='Admin')
+
+                                                    @else
+                                                        <button data-toggle="modal" data-target="#edit{{$item->id}}" class="btn btn-success btn-sm" title="Edit User"><i class="fas fa-wrench"></i></button>
+                                                        <a href="{{url('hapus-user').'/'.$item->id}}" class="btn btn-danger btn-sm" title="Hapus User"><i class="fas fa-trash"></i></a>
+                                                    @endif
+                                                @endif
                                             @endif
                                         </center>
                                     </td>
@@ -87,21 +100,27 @@
                                                     </div> -->
                                                     <div class="form-group">
                                                         <select name="level" class="form-control form-control-sm">
-                                                        @if($item->level=="Superadmin")
-                                                            <option value="{{$item->level}}">Superadmin</option>
-                                                            <option value="Admin">Admin</option>
-                                                            <option value="User">User</option>
-                                                        @else
-                                                            @if($item->level=="Admin")
-                                                            <option value="{{$item->level}}">Admin</option>
-                                                            <option value="Superadmin">Superadmin</option>
-                                                            <option value="User">User</option>
-                                                            @elseif($item->level=="User")
-                                                            <option value="{{$item->level}}">User</option>
-                                                            <option value="Superadmin">Superadmin</option>
-                                                            <option value="Admin">Admin</option>
+                                                            @if($item->level=="Superadmin")
+                                                                <option value="{{$item->level}}">Superadmin</option>
+                                                                <option value="Admin">Admin</option>
+                                                                <option value="User">User</option>
+                                                            @else
+                                                                @if($item->level=="Admin")
+                                                                    @if(Auth::user()->level=="Developer" || Auth::user()->level=="Superadmin")
+                                                                        <option value="{{$item->level}}">Admin</option>
+                                                                        <option value="User">User</option>
+                                                                    @elseif(Auth::user()->level=="Developer" || Auth::user()->level=="Admin")
+                                                                        <option value="User">User</option>
+                                                                    @endif
+                                                                @elseif($item->level=="User")
+                                                                    @if(Auth::user()->level=="Developer" || Auth::user()->level=="Superadmin")
+                                                                        <option value="{{$item->level}}">User</option>
+                                                                        <option value="Admin">Admin</option>
+                                                                    @elseif(Auth::user()->level=="Developer" || Auth::user()->level=="Admin")
+                                                                        <option value="{{$item->level}}">User</option>
+                                                                    @endif
+                                                                @endif
                                                             @endif
-                                                        @endif
                                                         </select>
                                                     </div>
                                                     <div class="modal-footer">
@@ -140,9 +159,8 @@
                                     </div> -->
                                     <div class="form-group">
                                         <select name="level" class="form-control form-control-sm">
-                                            <option value="Superadmin">Superadmin</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="User">User</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="User">User</option>
                                         </select>
                                     </div>
                                     <div class="modal-footer">

@@ -59,11 +59,13 @@
           </div>
         </div>
       </li>
+      @if(Auth::user()->level=="Developer" || Auth::user()->level=="Superadmin" || Auth::user()->level=="Admin")
       <li class="nav-item">
         <a class="nav-link" href="{{url('data-user')}}">
           <i class="fas fa-fw fa-user"></i>
           <span>Akun</span></a>
       </li>
+      @endif
       <li class="nav-item">
         <a class="nav-link" href="{{url('setweb')}}">
           <i class="fas fa-fw fa-cog"></i>
