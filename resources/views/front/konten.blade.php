@@ -7,7 +7,9 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="400ms">SMK Plus Darussalam <br>Kota Kediri</h2>
+                            @foreach($setting as $websetting)
+                                <h2 data-animation="fadeInUp" data-delay="400ms">{{$websetting->webname}} <br>Kota {{$websetting->kota}}</h2>
+                                @endforeach
                             </div>
                         </div>
                     </div>
