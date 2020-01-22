@@ -54,7 +54,7 @@ Blog
                                     <th scope="row">{{$no++}}</th>
                                     <td>{{$item->kategori}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
+                                        <a href="{{url('hapus-kategori').'/'.$item->id}}" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
                                         <button type="button" data-toggle="modal" data-target="#l{{$item->id}}"
                                             class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></button>
                                     </td>
