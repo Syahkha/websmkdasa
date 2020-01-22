@@ -66,6 +66,12 @@ class BlogController extends Controller
 
 
     }
+    function hapusK($id){
+        $data=DB::delete('delete from kategori where id=?',[$id]);
+        if($data){
+            return redirect()->action('admin\BlogController@dataPenulisan')->with('msg','Data Berhasil dihapus');
+        }
+    }
     function inputArtikel(Request $request){
 
         if($request->hasFile('gambar')){
