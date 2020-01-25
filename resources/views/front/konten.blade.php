@@ -2,7 +2,9 @@
         <div class="hero-slides owl-carousel">
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(front/img/bg-img/tester.jpg);">
+            @foreach($setting as $data)
+            <div class="single-hero-slide bg-img" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{asset('source/banner/'.$data->banner)}}');">
+            @endforeach
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
