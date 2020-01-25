@@ -38,7 +38,6 @@ class SettingWebController extends Controller
             'instagram'=>'required',
             'twitter'=>'required',
             'youtube'=>'required',
-            'banner'=>'image|mimes:jpg,jpeg,png|max:4096', 
             'psb'=>'required',
             
         ]);
@@ -57,9 +56,11 @@ class SettingWebController extends Controller
             $twitter=$request->twitter;
             $youtube=$request->youtube;
             $psb=$request->psb; 
+            $profil=$request->profil;
             
+            //banner
             $bn=$request->file('banner');
-            $nama=time().'-'.$bn->getClientOriginalName();
+            $nama=$request->file('banner')->getClientOriginalName();
             $path=$this->banpath;
             $bn->move($path,$nama); 
 
@@ -71,7 +72,43 @@ class SettingWebController extends Controller
                 return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Gagal Disimpan");
             }
      
+        }elseif($request->hasFile('logo')||$request->hasFile('ico')){
+            $request->validate([
+                'logo'=>'required|image|mimes:jpg,jpeg,png|max:40096',
+                'ico'=>'required|image|mimes:jpg,jpeg,png|max:40096',
+                
+            ]);
+            $id=$request->id;
+            $name=$request->name;
+            $email=$request->email;
+            $kontak1=$request->kontak1;
+            $kontak2=$request->kontak2;
+            $alamat=$request->alamat;
+            $provinsi=$request->provinsi;
+            $kota=$request->kota;
+            $facebook=$request->facebook;
+            $instagram=$request->instagram;
+            $twitter=$request->twitter;
+            $youtube=$request->youtube;
+            $psb=$request->psb; 
+            $profil=$request->profil;
 
+            $logo=$request->logo;
+            $ico=$request->icon;
+            $path=$this->path;
+            $lg=$logo->getClientOriginalName();
+            $ic=$ico->getClientOriginalName();
+            $logo->move($path,$lg);
+            $ico->move($path,$ic);
+
+            $update=DB::update("update setting set webname=?,email=?,kontak1=?,kontak2=?,alamat=?,provinsi=?,kota=?,facebook=?,instagram=?,twitter=?,youtube=?,psb=?,profil=?,logo=?,icon=? where id=?",
+            [$name,$email,$kontak1,$kontak2,$alamat,$provinsi,$kota,$facebook,$instagram,$twitter,$youtube,$psb,$profil,$lg,$ic,$id]);
+            if($update){
+                return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Berhasil Disimpan");
+            }else{
+                return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Gagal Disimpan");
+            }
+            
         }else{
             $id=$request->id;
             $name=$request->name;
