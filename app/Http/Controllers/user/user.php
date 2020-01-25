@@ -49,7 +49,7 @@ class User extends Controller
     function dataU(){
         $data=DB::table('users')
             ->select(DB::raw("users.*"))
-            ->orderBy('id','ASC')
+            ->orderBy('level','ASC')
             ->paginate(10);
         if($data){
             return view('user.data_user',['data'=>$data]);

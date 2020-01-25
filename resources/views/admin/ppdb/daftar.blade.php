@@ -48,7 +48,7 @@ Daftar Siswa
                                 <input type="text" name="hari_tanggal" placeholder="<?php
                                 $tanggal = time();
                                     echo ''.indonesian_date($tanggal, 'l, d/F/Y'); 
-                                ?>" class="form-control" readonly required>
+                                ?>" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -58,7 +58,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="nomor_pendaftaran" placeholder="Nomor Pendaftaran" class="form-control" required>
+                                <input type="text" name="nomor_pendaftaran" placeholder="Nomor Pendaftaran" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -68,7 +68,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="nama" placeholder="Nama" class="form-control" required>
+                                <input type="text" name="nama" placeholder="Nama" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -105,7 +105,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control" required>
+                                <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -115,7 +115,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" readonly required  class="form-control pull-right tgl" name="tanggal_lahir" placeholder="{{date('d/m/Y')}}" id="datepicker">
+                                <input type="text" readonly  class="form-control pull-right tgl" name="tanggal_lahir" placeholder="{{date('d/m/Y')}}" id="datepicker">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -157,7 +157,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="kebutuhan_khusus" placeholder="Kebutuhan Khusus" class="form-control" required>
+                                <input type="text" name="kebutuhan_khusus" placeholder="Kebutuhan Khusus" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -167,7 +167,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="alamat" placeholder="Alamat" class="form-control" required>
+                                <input type="text" name="alamat" placeholder="Alamat" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -177,7 +177,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="rt" placeholder="RT" class="form-control" required>
+                                <input type="text" name="rt" placeholder="RT" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -187,7 +187,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="rw" placeholder="RW" class="form-control" required>
+                                <input type="text" name="rw" placeholder="RW" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -197,7 +197,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="dusun" placeholder="Dusun" class="form-control" required>
+                                <input type="text" name="dusun" placeholder="Dusun" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -207,7 +207,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="kelurahan" placeholder="Kelurahan" class="form-control" required>
+                                <input type="text" name="kelurahan" placeholder="Kelurahan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -217,7 +217,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="kecamatan" placeholder="Kecamatan" class="form-control" required>
+                                <input type="text" name="kecamatan" placeholder="Kecamatan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -227,7 +227,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="kode_pos" placeholder="Kode POS" class="form-control" required>
+                                <input type="text" name="kode_pos" placeholder="Kode POS" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -254,7 +254,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="alat_transportasi" placeholder="Alat Transportasi" class="form-control" required>
+                                <input type="text" name="alat_transportasi" placeholder="Alat Transportasi" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -264,7 +264,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="telpon" placeholder="Telepon *)" class="form-control" required>
+                                <input type="text" name="telpon" placeholder="Telepon *)" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -274,7 +274,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="hp" placeholder="HP *)" class="form-control" required>
+                                <input type="text" name="hp" placeholder="HP *)" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -284,7 +284,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="email" placeholder="E-Mail" class="form-control" required>
+                                <input type="text" name="email" placeholder="E-Mail" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -294,7 +294,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="no_peserta_un" placeholder="No. Peserta UN" class="form-control" required>
+                                <input type="text" name="no_peserta_un" placeholder="No. Peserta UN" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -321,7 +321,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="no_kip" placeholder="No. KIP" class="form-control" required>
+                                <input type="text" name="no_kip" placeholder="No. KIP" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -337,13 +337,13 @@ Daftar Siswa
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">a. Nama</label> --}}
-                                <input type="text" name="nama_ayah" placeholder="Nama" class="form-control" required>
+                                <input type="text" name="nama_ayah" placeholder="Nama" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">d. Pekerjaan</label> --}}
-                                <input type="text" name="pekerjaan_ayah" placeholder="Pekerjaan" class="form-control" required>
+                                <input type="text" name="pekerjaan_ayah" placeholder="Pekerjaan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -352,13 +352,13 @@ Daftar Siswa
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">b. Tahun Lahir</label> --}}
-                                <input type="text" name="tahun_lahir_ayah" placeholder="Tahun Lahir" class="form-control tahun" id="datepicker" required>
+                                <input type="text" name="tahun_lahir_ayah" placeholder="Tahun Lahir" class="form-control tahun" id="datepicker">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">e. Penghasilan</label> --}}
-                                <input type="text" name="penghasilan_ayah" placeholder="Penghasilan" class="form-control" required>
+                                <input type="text" name="penghasilan_ayah" placeholder="Penghasilan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -392,7 +392,13 @@ Daftar Siswa
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">f. Kebutuhan Khusus</label> --}}
-                                <input type="text" name="kebutuhan_khusus_ayah" placeholder="Kebutuhan Khusus" class="form-control" required>
+                                <input type="text" name="kebutuhan_khusus_ayah" placeholder="Kebutuhan Khusus" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{-- <label for="nis">g. HP *)</label> --}}
+                                <input type="text" name="hp_ayah" placeholder="Hp *)" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -408,13 +414,13 @@ Daftar Siswa
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">a. Nama</label> --}}
-                                <input type="text" name="nama_ibu" placeholder="Nama" class="form-control" required>
+                                <input type="text" name="nama_ibu" placeholder="Nama" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">d. Pekerjaan</label> --}}
-                                <input type="text" name="pekerjaan_ibu" placeholder="Pekerjaan" class="form-control" required>
+                                <input type="text" name="pekerjaan_ibu" placeholder="Pekerjaan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -423,13 +429,13 @@ Daftar Siswa
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">b. Tahun Lahir</label> --}}
-                                <input type="text" name="tahun_lahir_ibu" placeholder="Tahun Lahir" class="form-control tahun" id="datepicker" required>
+                                <input type="text" name="tahun_lahir_ibu" placeholder="Tahun Lahir" class="form-control tahun" id="datepicker">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">e. Penghasilan</label> --}}
-                                <input type="text" name="penghasilan_ibu" placeholder="Penghasilan" class="form-control" required>
+                                <input type="text" name="penghasilan_ibu" placeholder="Penghasilan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -463,7 +469,13 @@ Daftar Siswa
                         <div class="col-md-4">
                             <div class="form-group">
                                 {{-- <label for="nis">f. Kebutuhan Khusus</label> --}}
-                                <input type="text" name="kebutuhan_khusus_ibu" placeholder="Kebutuhan Khusus" class="form-control" required>
+                                <input type="text" name="kebutuhan_khusus_ibu" placeholder="Kebutuhan Khusus" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{-- <label for="nis">g. HP *)</label> --}}
+                                <input type="text" name="hp_ibu" placeholder="Hp *)" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -478,7 +490,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="berat_badan" placeholder="Berat Badan" class="form-control" required>
+                                <input type="text" name="berat_badan" placeholder="Berat Badan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -488,7 +500,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="tinggi_badan" placeholder="Tinggi Badan" class="form-control" required>
+                                <input type="text" name="tinggi_badan" placeholder="Tinggi Badan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -515,7 +527,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="waktu_tempuh" placeholder="Waktu Tempuh ke Sekolah" class="form-control" required>
+                                <input type="text" name="waktu_tempuh" placeholder="Waktu Tempuh ke Sekolah" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -525,7 +537,12 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="jumlah_saudara_kandung" placeholder="Jumlah Saudara Kandung" class="form-control" required>
+                                <input type="text" name="jumlah_saudara_kandung" placeholder="Jumlah Saudara Kandung" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group text-right">
+                                <button class="btn btn-clock btn-primary" type="submit"><span class="fa fa-check"></span> Simpan</button>
                             </div>
                         </div>
                     </div>

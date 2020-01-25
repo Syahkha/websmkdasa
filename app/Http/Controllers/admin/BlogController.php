@@ -16,6 +16,7 @@ class BlogController extends Controller
         //Definisikan Path
         $this->middleware('auth');
         $this->path = public_path('/source');
+   
     }
 
     function tulis(){
@@ -66,6 +67,12 @@ class BlogController extends Controller
 
 
     }
+    function hapusK($id){
+        $data=DB::delete('delete from kategori where id=?',[$id]);
+        if($data){
+            return redirect()->action('admin\BlogController@dataPenulisan')->with('msg','Data Berhasil dihapus');
+        }
+    }
     function inputArtikel(Request $request){
 
         if($request->hasFile('gambar')){
@@ -79,7 +86,7 @@ class BlogController extends Controller
             $tgl=date('d-m-Y H:i:s');
             $ida=$request->id;
             $idk=$request->kategori;
-            $data=DB::insert('insert into artikel(judul,judul_url,artikel,tanggal,id_admin,gambar,idkategori) values(?,?,?,?,?,?,?)',[$ju,$jurl,$is,$tgl,$ida,$nama,$idk]);
+            $data=DB::insert('insert  into artikel(judul,judul_url,artikel,tanggal,id_admin,gambar,idkategori) values(?,?,?,?,?,?,?)',[$ju,$jurl,$is,$tgl,$ida,$nama,$idk]);
             if($data){
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Artikel Berhasil Disimpan');
             }else{
