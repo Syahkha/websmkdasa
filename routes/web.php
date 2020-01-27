@@ -40,6 +40,7 @@ Route::get('data-siswi','admin\SiswaController@dataSiswi');
 
 // ppdb
 Route::get('daftar','admin\PpdbController@daftar');
+Route::post('simpan-daftar','admin\PpdbController@simpanD');
 Route::get('ppdb-siswa','admin\PpdbController@ppdbSiswa');
 Route::get('ppdb-siswi','admin\PpdbController@ppdbSiswi');
 

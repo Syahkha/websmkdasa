@@ -45,10 +45,10 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="hari_tanggal" placeholder="<?php
+                                <input id="datepicker" type="text" value="<?php
                                 $tanggal = time();
                                     echo ''.indonesian_date($tanggal, 'l, d/F/Y'); 
-                                ?>" class="form-control" readonly>
+                                ?>" name="hari_tanggal" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -68,7 +68,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="nama" placeholder="Nama" class="form-control">
+                                <input type="text" name="nama_siswa" placeholder="Nama" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -115,7 +115,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" readonly  class="form-control pull-right tgl" name="tanggal_lahir" placeholder="{{date('d/m/Y')}}" id="datepicker">
+                                <input type="text" readonly  class="form-control pull-right tgl" name="tanggal_lahir" placeholder="{{date('d-m-Y')}}" id="datepicker">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -157,7 +157,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="kebutuhan_khusus" placeholder="Kebutuhan Khusus" class="form-control">
+                                <input type="text" name="kebutuhan_khusus_siswa" placeholder="Kebutuhan Khusus" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -244,6 +244,9 @@ Daftar Siswa
                                     <div class="col-md-4">
                                         <input type="radio" name="jenis_tinggal" value="Bersama Wali"> Bersama Wali<br>
                                     </div>
+                                    <div class="col-md-4">
+                                        <input type="radio" name="jenis_tinggal" value="Pondok"> Pondok <br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +267,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="telpon" placeholder="Telepon *)" class="form-control">
+                                <input type="text" name="telepon_siswa" placeholder="Telepon *)" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -274,7 +277,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="hp" placeholder="HP *)" class="form-control">
+                                <input type="text" name="hp_siswa" placeholder="HP *)" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -559,7 +562,7 @@ Daftar Siswa
         $(this).val(n.toLocaleString());
         }); 
         $('.tgl').datepicker({
-            format: 'yyyy-mm-dd',
+            format: 'dd-mm-yyyy',
         });
     </script>
     <script>
