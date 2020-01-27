@@ -54,7 +54,8 @@ Blog
                                     <th scope="row">{{$no++}}</th>
                                     <td>{{$item->kategori}}</td>
                                     <td>
-                                        <a href="{{url('hapus-kategori').'/'.$item->id}}" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
+                                        <a href="{{url('hapus-kategori').'/'.$item->id}}"
+                                            class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
                                         <button type="button" data-toggle="modal" data-target="#l{{$item->id}}"
                                             class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></button>
                                     </td>
@@ -125,13 +126,11 @@ Blog
                 </div>
             </div>
         </div>
-
     </div>
     <div class="card shadow mb-3">
         <div class="card-header py-3">
             <h5 class="m-0 font-weight-bold text-primary"> Menulis Artikel</h5>
         </div>
-
         <div class="card-body">
             <form method="POST" action="{{url('post-artikel')}}" enctype="multipart/form-data">
                 @csrf

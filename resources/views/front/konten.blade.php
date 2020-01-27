@@ -2,12 +2,16 @@
         <div class="hero-slides owl-carousel">
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(front/img/bg-img/tester.jpg);">
+            @foreach($setting as $data)
+            <div class="single-hero-slide bg-img" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{asset('source/banner/'.$data->banner)}}');">
+            @endforeach
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="400ms">SMK Plus Darussalam <br>Kota Kediri</h2>
+                            @foreach($setting as $websetting)
+                                <h2 data-animation="fadeInUp" data-delay="400ms">{{$websetting->webname}} <br>Kota {{$websetting->kota}}</h2>
+                                @endforeach
                             </div>
                         </div>
                     </div>
