@@ -31,7 +31,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
-   @include('front.konten')
+   @yield('konten')
 @include('front.footer')
 
     <!-- ##### All Javascript Script ##### -->

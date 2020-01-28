@@ -8,9 +8,13 @@
                     <div class="col-12 col-sm-6 col-lg-6">
                         <div class="footer-widget mb-100">
                             <div class="widget-title">
-                                <a href="#"><img src="{{asset('front/img/core-img/logo2.png')}}" alt=""></a>
+                            @foreach($setting as $data)
+                                <a href="#"><img src="{{asset('source/icon/'.$data->icon)}}" width="100px" alt=""></a>
+                                @endforeach
                             </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget.</p>
+                            @foreach($setting as $data)
+                            <p>{{$data->profil}}</p>
+                            @endforeach
                             <div class="footer-social-info">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>

@@ -1,4 +1,9 @@
- <section class="hero-area">
+@extends('front.index')
+@section('title')
+Home
+@endsection
+@section('konten')
+<section class="hero-area">
         <div class="hero-slides owl-carousel">
 
             <!-- Single Hero Slide -->
@@ -134,4 +139,7 @@
         </div>
     </div>
     <!-- ##### Course Area End ##### -->
+@endsection
+
+
     
