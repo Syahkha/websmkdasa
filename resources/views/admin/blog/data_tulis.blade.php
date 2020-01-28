@@ -29,7 +29,7 @@ Data Tulis
         </div>
 
         <div class="card-body">
-            <table class="table table-bordered">
+            <table class="table  table-striped table-bordered first">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                     <a href="{{url('tulis')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Buat Artikel</a>

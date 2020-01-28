@@ -31,7 +31,7 @@ Route::post('edit-user','user\User@editU');
 
 // settingweb
 Route::get('setweb','admin\SettingWebController@setweb');
-Route::post('update-setting','admin\SettingWebController@upset');
+Route::post('update-setting','admin\SettingWebController@updateSetting');
 Route::post('insert-setweb','admin\SettingWebController@inputSetweb');
 
 // siswa
@@ -41,6 +41,7 @@ Route::get('data-siswi','admin\SiswaController@dataSiswi');
 
 // ppdb
 Route::get('daftar','admin\PpdbController@daftar');
+Route::post('simpan-daftar','admin\PpdbController@simpanD');
 Route::get('ppdb-siswa','admin\PpdbController@ppdbSiswa');
 Route::get('ppdb-siswi','admin\PpdbController@ppdbSiswi');
 

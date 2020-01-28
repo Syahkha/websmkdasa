@@ -8,7 +8,7 @@
                 <div class="header-content h-100 d-flex align-items-center justify-content-between">
                     <div class="academy-logo">
                     @foreach($setting as $data)
-                        <a href="index.html"><img src="{{asset('source/banner/'.$data->logo)}}"  width="200px"  type="image/png" alt="logo"></a>
+                        <a href="index.html"><img src="{{asset('source/logo/'.$data->logo)}}"  width="200px" alt="logo"></a>
                     @endforeach
                     </div>
                     <div class="login-content">
