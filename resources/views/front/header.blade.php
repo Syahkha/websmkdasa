@@ -44,10 +44,14 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="{{url('/')}}">Home</a></li>
-                            <li><a href="#">Profil</a></li>
+                            <li class="cn-dropdown-item has-down pr12"><a href="#">Profil</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Galeri</a></li>
+                                        </ul>
+                                    <span class="dd-trigger"></span><span class="dd-arrow"></span></li>
                             <li><a href="#course">Program Keahlian</a></li>
-                            <li><a href="#">PPDB</a></li>
-                            <li><a href="#">Berita</a></li>
+                            <li><a href="">PPDB</a></li>
+                            <li><a href="{{url('tampilblog')}}">Berita</a></li>
                             <li><a href="#">Kontak Kami</a></li>
                         </ul>
                     </div>
