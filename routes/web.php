@@ -31,7 +31,7 @@ Route::post('edit-user','user\User@editU');
 
 // settingweb
 Route::get('setweb','admin\SettingWebController@setweb');
-Route::post('update-setting','admin\SettingWebController@upset');
+Route::post('update-setting','admin\SettingWebController@updateSetting');
 Route::post('insert-setweb','admin\SettingWebController@inputSetweb');
 
 // siswa

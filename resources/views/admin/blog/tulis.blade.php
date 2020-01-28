@@ -4,10 +4,7 @@ Blog
 @endsection
 @section('konten')
 <div class="container-fluid">
-
-    <div class="card shadow mb-3">
-
-        @if (Session('psn'))
+@if (Session('psn'))
         <div class="alert alert-primary alert-dismissible" role="alert">
             <p align="center">{{Session('psn')}}</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -26,11 +23,15 @@ Blog
             @endforeach
         </ul>
         @endif
+    <div class="card shadow mb-3">
         <a href="#collapseOne" class="d-block card-header py-3" data-toggle="collapse" role="button"
             aria-expanded="true" aria-controls="collapseCardExample">
             <div class="row">
                 <div class="col font-weight-bold">
+              
+                
                     Kategori
+                
                 </div>
             </div>
         </a>
