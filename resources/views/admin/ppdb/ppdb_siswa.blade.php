@@ -36,6 +36,7 @@ PPDB Siswa
                             <td>
                                 <button class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#l{{$item->id}}" type="button" title="Terima"><span class="fa fa-check"></span></button>
                                 <button class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#t{{$item->id}}" type="button" title="Tolak"><span class="fa fa-times"></span></button>
+                                <a href="{{url('print-ppdb')."/".$item->ids}}" class="btn btn-outline-info btn-sm"><span class="fa fa-print"></span></a>
                             </td>
                         </tr>
                         <div class="modal fade" id="l{{$item->id}}">
@@ -55,7 +56,7 @@ PPDB Siswa
                                         </ol>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{url('acc-daftar').'/'.$item->ids}}" class="btn btn-outline-primary"><i class="fa fa-check"></i> Terima</a>
+                                        <a href="{{url('acc-daftar-sa').'/'.$item->ids}}" class="btn btn-outline-primary"><i class="fa fa-check"></i> Terima</a>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +68,7 @@ PPDB Siswa
                                         <h4 class="modal-title">Masukkan Sebab Atau Keterangan Tidak Diterima</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{url('ditolak-daftar')}}" method="post">
+                                        <form action="{{url('ditolak-daftar-sa')}}" method="post">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="hidden" name="id" value="{{$item->ids}}">
@@ -89,7 +90,7 @@ PPDB Siswa
         <br>
         <div class="card card-primary">
             <div class="card-header">
-                <div class="card-title">Data Pendaftaran Siswa</div>
+                <div class="card-title">Data Pendaftaran Siswa Ditolak</div>
             </div>
             <div class="card-body">
                 <table class="table table-bordered">
@@ -119,6 +120,7 @@ PPDB Siswa
                             <td>
                                 <button class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#l{{$item->id}}" type="button" title="Terima"><span class="fa fa-check"></span></button>
                                 <button class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#t{{$item->id}}" type="button" title="Tolak"><span class="fa fa-times"></span></button>
+                                <a href="{{url('print-ppdb')."/".$item->ids}}" class="btn btn-outline-info btn-sm"><span class="fa fa-print"></span></a>
                             </td>
                         </tr>
                         <div class="modal fade" id="l{{$item->id}}">
@@ -138,7 +140,7 @@ PPDB Siswa
                                         </ol>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{url('acc-daftar').'/'.$item->ids}}" class="btn btn-outline-primary"><i class="fa fa-check"></i> Terima</a>
+                                        <a href="{{url('acc-daftar-sa').'/'.$item->ids}}" class="btn btn-outline-primary"><i class="fa fa-check"></i> Terima</a>
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +152,7 @@ PPDB Siswa
                                         <h4 class="modal-title">Masukkan Sebab Atau Keterangan Tidak Diterima</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{url('ditolak-daftar')}}" method="post">
+                                        <form action="{{url('ditolak-daftar-sa')}}" method="post">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="hidden" name="id" value="{{$item->ids}}">
