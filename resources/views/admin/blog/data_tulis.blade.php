@@ -150,7 +150,7 @@ Data Tulis
                                                     <label for="judul">Upload Gambar Cover</label>
                                                     <img src="{{asset('source').'/'.$post->gambar}}" alt=""
                                                         height="300px" width="50%"><br>
-                                                    <input type="hidden" value="{{$post->gambar}}" name="old"
+                                                    <input type="hidden" value="{{$post->gambar}}" name="gambarLama"
                                                         class="form-control">
                                                     <input type="file" name="gambar" class="form-control" id="file">
                                                 </div>

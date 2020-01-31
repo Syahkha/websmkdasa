@@ -112,6 +112,17 @@ Home
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-sm-6 col-lg-6">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="course-icon">
+                            <i class="icon-worldwide"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Teknik Komputer Jaringan</h4>
+                            <p>Lacinia, lacinia la cus non, fermen tum nisi.</p>
+                        </div>
+                    </div>
+                </div>
                 <!-- Single Course Area -->
                 <div class="col-12 col-sm-6 col-lg-6">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">

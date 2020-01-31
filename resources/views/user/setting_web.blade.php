@@ -187,7 +187,7 @@ Setting Web
                                     <label for="">Nama Web</label>
                                     <input type="hidden" name="id" value="1 " id="" class="form-control">
                                     <input placeholder="Isikan Nama Web" type="text" name="name" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -202,95 +202,95 @@ Setting Web
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input placeholder="Isi Email" type="text" name="email" id="" class="form-control">
+                                    <input placeholder="Isi Email" type="text" name="email" id="" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Alamat</label>
                                     <input placeholder="Isi Alamat" type="text" name="alamat" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Kontak 1</label>
                                     <input placeholder="Isikan Kontak 1" type="text" name="kontak1" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Kota</label>
-                                    <input placeholder="Isi Kota" type="text" name="kota" id="" class="form-control">
+                                    <input placeholder="Isi Kota" type="text" name="kota" id="" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Kontak 2</label>
                                     <input placeholder="Isi Kontak 2" type="text" name="kontak2" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Provinsi</label>
                                     <input placeholder="Isi Provinsi" type="text" name="provinsi" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Facebook</label>
                                     <input placeholder="Isi Facebook" type="text" name="facebook" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Logo</label>
-                                    <input placeholder="Isi Logo" type="file" name="logo" id="" class="form-control">
+                                    <input placeholder="Isi Logo" type="file" name="logo" id="" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Instagram</label>
                                     <input placeholder="Isi Instagram" type="text" name="instagram" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">icon</label>
-                                    <input placeholder="Isi Icon" type="file" name="icon" id="" class="form-control">
+                                    <input placeholder="Isi Icon" type="file" name="icon" id="" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Twitter</label>
                                     <input placeholder="Isi Twitter" type="text" name="twitter" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Banner</label>
                                     <input placeholder="Isi Banner" type="file" name="banner" id="file"
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Youtube</label>
                                     <input placeholder="Isi Youtube" type="text" name="youtube" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Profil</label>
                                     <input placeholder="Isi profil" type="text" name="profil" id=""
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <hr>

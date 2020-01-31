@@ -11,9 +11,17 @@ class frontendController extends Controller
 
     function index(){
         $websetting=DB::table('setting')->get();
-        return view('front.konten',[
-            'setting'=>$websetting
-        ]);
+        $menu=DB::table('kategori')
+                    ->join('sub_kategori','kategori.id', '=' ,'sub_kategori.id_kategori')
+                    ->select('kategori.*','sub_kategori.sub_kategori')
+                    ->where('edit', '=', 'N')
+                    ->get();
+
+
+        return view('front.konten',
+            ['setting'=>$websetting],
+            ['menu'=>$menu]
+        );
     }
     function blog(){
         $websetting=DB::table('setting')->get();
