@@ -42,8 +42,17 @@ Route::get('data-siswi','admin\SiswaController@dataSiswi');
 // ppdb
 Route::get('daftar','admin\PpdbController@daftar');
 Route::post('simpan-daftar','admin\PpdbController@simpanD');
+Route::get('print-ppdb/{id}','admin\PpdbController@print');
+// =======================================================
+// siswa
 Route::get('ppdb-siswa','admin\PpdbController@ppdbSiswa');
+Route::get('acc-daftar-sa/{id}','admin\PpdbController@accSiswa');
+Route::post('ditolak-daftar-sa','admin\PpdbController@ditolakSiswa');
+// siswi
 Route::get('ppdb-siswi','admin\PpdbController@ppdbSiswi');
+Route::get('acc-daftar-si/{id}','admin\PpdbController@accSiswi');
+Route::post('ditolak-daftar-si','admin\PpdbController@ditolakSiswi');
+// =======================================================
 
 // blog
 Route::get('tulis','admin\BlogController@tulis');

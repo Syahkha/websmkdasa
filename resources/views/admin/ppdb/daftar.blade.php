@@ -17,7 +17,7 @@ Daftar Siswa
         @if(Session('msg'))
             <div class="alert alert-primary alert-dismissible" role="alert">
                 <p align="center">{{Session('msg')}}</p> Lihat Data Pendaftaran Putra/Putri
-                <button class="close" type="button" data-dissmis="alert" aria-label="Close">
+                <button class="close" type="button" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">x</span>
                 </button>
             </div>
