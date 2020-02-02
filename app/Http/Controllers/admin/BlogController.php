@@ -23,9 +23,9 @@ class BlogController extends Controller
     function tulis(){
     $data=DB::select('select * from kategori');
     $dataS=DB::table('sub_kategori')
-    ->join('kategori', 'sub_kategori.id_kategori', '=', 'kategori.id')
+    ->join('kategori', 'sub_kategori.kategori_id', '=', 'kategori.id')
     ->select('sub_kategori.*', 'kategori.kategori')
-    ->orderby('id_kategori')
+    ->orderby('kategori_id')
     ->get();
         return view('admin.blog.tulis',['data'=>$data,'dataS'=>$dataS]);
     }
@@ -85,7 +85,7 @@ class BlogController extends Controller
         $sub=$request->subkategori;
         $idk=$request->idk;
 
-        $data=DB::insert('insert into sub_kategori(sub_kategori,id_kategori) values(?,?)',[$sub,$idk]);
+        $data=DB::insert('insert into sub_kategori(sub_kategori,kategori_id) values(?,?)',[$sub,$idk]);
         if($data){
             return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
         }else{
@@ -109,7 +109,7 @@ class BlogController extends Controller
             ->where('id', $id)
             ->update(
                 ['sub_kategori' => $sub],
-                ['id_kategori' => $idk]
+                ['kategori_id' => $idk]
             );
         if($upsub){
             return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');

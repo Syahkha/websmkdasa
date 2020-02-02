@@ -5,17 +5,16 @@ namespace App\Http\Controllers\user;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Model\Kategori;
+use App\Model\SubKategori;
 
 class frontendController extends Controller
 {
 
     function index(){
         $websetting=DB::table('setting')->get();
-        $menu=DB::table('kategori')
-                    ->join('sub_kategori','kategori.id', '=' ,'sub_kategori.id_kategori')
-                    ->select('kategori.*','sub_kategori.sub_kategori')
-                    ->where('edit', '=', 'N')
-                    ->get();
+        $menu=Kategori::where('edit', 'N')->get();
+
 
 
         return view('front.konten',
