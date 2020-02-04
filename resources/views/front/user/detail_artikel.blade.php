@@ -50,24 +50,14 @@ Blog
                                     <!-- Post Excerpt -->
                                     <p>{!!substr($data->artikel, 0, 170)!!}...</p>
                                     <!-- Read More btn -->
-                                    <a href="" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
+                                    <a href="#" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
                                 </div>
                             </div>
                             @endforeach
 
                         </div>
                     </div>
-                    <!-- Pagination Area Start -->
-                    <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+
 
                 <div class="col-12 col-md-4">
                     <div class="academy-blog-sidebar">

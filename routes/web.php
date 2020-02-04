@@ -60,3 +60,4 @@ Route::post('cari-artikel','admin\BlogController@cari');
 //front
 Route::get('/','user\frontendcontroller@index');
 Route::get('tampilblog','user\frontendcontroller@blog');
+Route::get('detailartikel','user\frontendcontroller@detail_artikel');
