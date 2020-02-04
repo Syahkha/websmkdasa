@@ -152,8 +152,8 @@ Setting Web
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Profil</label>
-                            <input placeholder="Isi Profil" value="{{$item->profil}}" type="text" name="profil" id=""
-                                class="form-control">
+                            <textarea placeholder="Isi Profil"  rows="5" name="profil" id=""
+                                class="form-control">{{$item->profil}} </textarea>
                         </div>
                     </div>
 

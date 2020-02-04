@@ -122,116 +122,6 @@ Blog
         </div>
     </div>
     <!-- END KATEGORI -->
-    <div class="card shadow mb-3">
-        <a href="#collapseTwo" class="d-block card-header py-3" data-toggle="collapse" role="button"
-            aria-expanded="true" aria-controls="collapseCardExample">
-            <div class="row">
-                <div class="col font-weight-bold">
-                    SUB KATEGORI
-                </div>
-            </div>
-        </a>
-        <div id="collapseTwo" class="collapse">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Sub Kategori</th>
-                                    <th scope="col">Kategori Induk</th>
-                                    <th scope="col">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $no=1; ?>
-                                @foreach($dataS as $item)
-                                <tr>
-                                    <th scope="row">{{$no++}}</th>
-                                    <td>{{$item->sub_kategori}}</td>
-                                    <td>{{$item->kategori}}</td>
-                                    <td>
-                                        <button type="button" data-toggle="modal" data-target="#sub{{$item->id}}"
-                                            class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></button>
-                                        <a href="{{url('hapus-Skategori').'/'.$item->id}}"
-                                            class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <div class="modal fade" id="sub{{$item->id}}" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Sub Kategori</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="{{url('update-sub')}}" method="post">
-                                                @csrf
-                                                <div class="form-group">      
-                                                    <select class="form-control" name="idk">
-                                                    <option selected="true" disabled="disabled"> Pilih</option>
-                                                        @foreach($data as $kat)
-                                                        <option value="{{$kat->id}}">{{$kat->kategori}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                <input type="hidden" value="{{$item->id}}" name="id">
-                                                    <input type="text" name="edit_subkategori"  value="{{$item->sub_kategori}}"
-                                                        class="form-control">
-                                                </div>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Update</button>
-                                        </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-                        <form action="{{url('sub-kategori')}}" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <label for="subkategori">Kategori Induk</label>
-                                <select class="form-control" id="" name="idk">
-                                    <option selected="true" disabled="disabled"> Pilih</option>
-                                    @foreach($data as $kat)
-                                    <option value="{{$kat->id}}">{{$kat->kategori}}</option>
-                                    @endforeach
-                                </select>
-
-                            </div>
-                            <div class="form-group">
-                                <label>Tambah Sub Kategori</label>
-                                <input type="text" name="subkategori" class="form-control"
-                                    placeholder="Isi Sub Kategori" required>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-
-                            </div>
-
-
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- END SUB KATEGORI -->
     <!-- ARTIKEL -->
     <div class="card shadow mb-3">
         <div class="card-header py-3">
@@ -252,8 +142,8 @@ Blog
                         <div class="form-group">
                             <label for="kategori">Pilih Kategori</label>
                             <select class="form-control" name="kategori" id="kategori">
-                                @foreach($dataS as $item)
-                                <option value="{{$item->id}}">{{$item->kategori}} -> {{$item->sub_kategori}}</option>
+                                @foreach($data as $item)
+                                <option value="{{$item->id}}">{{$item->kategori}}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -26,7 +26,6 @@ class frontendController extends Controller
         $websetting=DB::table('setting')->get();
         $menu=Kategori::where('edit', 'N')->get();
         $kategori=Kategori::get();
-        $sub=Subkategori::get();
      
         $artikel = DB::table('artikel')
             ->join('users', 'users.id', '=', 'artikel.id_admin')
@@ -38,7 +37,7 @@ class frontendController extends Controller
             'artikel'=>$artikel,
             'menu'=>$menu,
             'kategori'=>$kategori,
-            'sub'=>$sub
+           
         ]);
     }
 

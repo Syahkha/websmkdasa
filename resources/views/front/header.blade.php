@@ -50,14 +50,7 @@
                             @foreach($menu as $m)
                             
                             <li class="cn-dropdown-item has-down pr12"><a href="{{url('Blog').'/'.$m->kurl}}">{{$m->kategori}}</a>
-                                    @if(count($m->sub_kategori))
-                                        <ul class="dropdown">
-                                            @foreach($m->sub_kategori as $s)
-                                            <li><a href="">{{$s->sub_kategori}}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    <span class="dd-trigger"></span><span class="dd-arrow"></span>
-                                    @endif 
+                    
                             </li>
                           
                             @endforeach

@@ -141,14 +141,14 @@ Data Tulis
                                                         </option>
                                                         @foreach ($kategori as $item)
                                                         <option value="{{$item->id}}">{{$item->kategori}}</option>
-                                                        @endforeach
+                                                        @endforeach 
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="judul">Upload Gambar Cover</label>
-                                                    <img src="{{asset('source').'/'.$post->gambar}}" alt=""
+                                                    <img src="{{asset('source/artikel').'/'.$post->gambar}}" alt=""
                                                         height="300px" width="50%"><br>
                                                     <input type="hidden" value="{{$post->gambar}}" name="gambarLama"
                                                         class="form-control">

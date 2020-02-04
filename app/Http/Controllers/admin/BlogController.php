@@ -22,12 +22,7 @@ class BlogController extends Controller
 
     function tulis(){
     $data=DB::select('select * from kategori');
-    $dataS=DB::table('sub_kategori')
-    ->join('kategori', 'sub_kategori.kategori_id', '=', 'kategori.id')
-    ->select('sub_kategori.*', 'kategori.kategori')
-    ->orderby('kategori_id')
-    ->get();
-        return view('admin.blog.tulis',['data'=>$data,'dataS'=>$dataS]);
+        return view('admin.blog.tulis',['data'=>$data]);
     }
     
     function inputKategori(Request $request){
@@ -80,53 +75,6 @@ class BlogController extends Controller
         if($data){
             return redirect()->action('admin\BlogController@tulis')->with('psn','Data Berhasil dihapus');
         }
-    }
-    function subKategori(Request $request){
-        
-    
-        $sub=$request->subkategori;
-        $idk=$request->idk;
-
-        $data=DB::insert('insert into sub_kategori(sub_kategori,kategori_id) values(?,?)',[$sub,$idk]);
-        if($data){
-            return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
-        }else{
-            return redirect()->action('admin\BlogController@tulis')->with("psn",'Gagal Disimpan');
-        }
-
-    }
-
-    function upSK(Request $request){
-        $request->validate([
-            'id'=>'required',
-            'edit_subkategori'=>'required',
-            'idk'=>'required',
-        ]);
-        $sub=$request->edit_subkategori;
-        $idk=$request->idk;
-        $id=$request->id;
-
-      
-        $upsub=DB::table('sub_kategori')
-            ->where('id', $id)
-            ->update(
-                ['sub_kategori' => $sub],
-                ['kategori_id' => $idk]
-            );
-        if($upsub){
-            return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
-        }else{
-            return redirect()->action('admin\BlogController@tulis')->with("psn",'Gagal Disimpan');
-        }
-
-    }
-    function hapusSK($id){
-        $data=DB::table('sub_kategori')
-            ->where(['id' => $id])
-            ->delete();
-            if($data){
-                return redirect()->action('admin\BlogController@tulis')->with('psn','Data Berhasil dihapus');
-            }
     }
  
     function inputArtikel(Request $request){
@@ -202,14 +150,13 @@ class BlogController extends Controller
             }
         } else{
             $id=$request->idar;
-            $old=$request->old;
             $ju=$request->judul;
             $jurl=str_replace(' ','-',$ju);
             $is=$request->isi;
             $tgl=date('d-m-Y H:i:s');
             $ida=$request->id;
             $idk=$request->kategori;
-            $data=DB::update('update artikel set judul=?,judul_url=?,artikel=?,tanggal=?,id_admin=?,gambar=?,idkategori=? where id=?',[$ju,$jurl,$is,$tgl,$ida,$old,$idk,$id]);
+            $data=DB::update('update artikel set judul=?,judul_url=?,artikel=?,tanggal=?,id_admin=?,idkategori=? where id=?',[$ju,$jurl,$is,$tgl,$ida,$idk,$id]);
             if($data){
                 return redirect()->action('admin\BlogController@dataPenulisan')->with("msg","Artikel Berhasil Disimpan");
             }else{
