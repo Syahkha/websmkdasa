@@ -35,15 +35,16 @@ class BlogController extends Controller
             'kategori'=>'required',
         ]);
         $kategori=$request->kategori;
+        $kurl=str_replace(' ','-',$kategori);
         if($request->menu=="N"){
-            $data=DB::insert('insert into kategori(kategori,edit) values(?,?)',[$kategori,"N"]);
+            $data=DB::insert('insert into kategori(kategori,edit,url_kategori) values(?,?,?)',[$kategori,"N",$kurl]);
             if($data){
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
             }else{
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Gagal Disimpan');
             }
         }else{
-            $data=DB::insert('insert into kategori(kategori) values(?)',[$kategori]);
+            $data=DB::insert('insert into kategori(kategori,url_kategori) values(?,?)',[$kategori,$kurl]);
             if($data){
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
             }else{
@@ -60,10 +61,11 @@ class BlogController extends Controller
         ]);
         $id=$request->id;
         $kategori=$request->kategori;
+        $kurl=str_replace(' ','-',$kategori);
         if($request->menu=="N"){
-            $data=DB::update('update kategori set kategori=?,edit=? where id=?',[$kategori,"N",$id]);
+            $data=DB::update('update kategori set kategori=?,edit=?,url_kategori=? where id=?',[$kategori,"N",$kurl,$id]);
         }else{
-            $data=DB::update('update kategori set kategori=?,edit=? where id=?',[$kategori,"Y",$id]);
+            $data=DB::update('update kategori set kategori=?,edit=?,url_kategori=? where id=?',[$kategori,"Y",$kurl,$id]);
         }
         if($data){
             return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');

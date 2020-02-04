@@ -17,9 +17,6 @@
                             @endforeach
                             <div class="footer-social-info">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-behance"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
@@ -29,7 +26,7 @@
                     <div class="col-12 col-sm-6 col-lg-6">
                         <div class="footer-widget mb-100">
                             <div class="widget-title">
-                                <h6>Contact</h6>
+                                <h6>Kontak Kami</h6>
                             </div>
                             @foreach($setting as $websetting)
                             <div class="single-contact d-flex mb-30">
@@ -41,7 +38,7 @@
                                 <p>KONTAK 1: {{$websetting->kontak1}}  <br>KONTAK 2: {{$websetting->kontak2}} </p>
                             </div>
                             <div class="single-contact d-flex">
-                                <i class="icon-contract"></i>
+                                <i class="icon-mail"></i>
                                 <p>{{$websetting->email}} </p>
                             </div>
                             @endforeach

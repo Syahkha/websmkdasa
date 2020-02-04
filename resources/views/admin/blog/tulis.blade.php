@@ -253,7 +253,7 @@ Blog
                             <label for="kategori">Pilih Kategori</label>
                             <select class="form-control" name="kategori" id="kategori">
                                 @foreach($dataS as $item)
-                                <option value="{{$item->id} }">{{$item->kategori}} -> {{$item->sub_kategori}}</option>
+                                <option value="{{$item->id}}">{{$item->kategori}} -> {{$item->sub_kategori}}</option>
                                 @endforeach
                             </select>
                         </div>
