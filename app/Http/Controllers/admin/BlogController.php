@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
@@ -15,13 +16,18 @@ class BlogController extends Controller
 
         //Definisikan Path
         $this->middleware('auth');
-        $this->path = public_path('/source');
+        $this->path = public_path('/source/artikel');
    
     }
 
     function tulis(){
     $data=DB::select('select * from kategori');
-        return view('admin.blog.tulis',['data'=>$data]);
+    $dataS=DB::table('sub_kategori')
+    ->join('kategori', 'sub_kategori.kategori_id', '=', 'kategori.id')
+    ->select('sub_kategori.*', 'kategori.kategori')
+    ->orderby('kategori_id')
+    ->get();
+        return view('admin.blog.tulis',['data'=>$data,'dataS'=>$dataS]);
     }
     
     function inputKategori(Request $request){
@@ -70,9 +76,57 @@ class BlogController extends Controller
     function hapusK($id){
         $data=DB::delete('delete from kategori where id=?',[$id]);
         if($data){
-            return redirect()->action('admin\BlogController@dataPenulisan')->with('msg','Data Berhasil dihapus');
+            return redirect()->action('admin\BlogController@tulis')->with('psn','Data Berhasil dihapus');
         }
     }
+    function subKategori(Request $request){
+        
+    
+        $sub=$request->subkategori;
+        $idk=$request->idk;
+
+        $data=DB::insert('insert into sub_kategori(sub_kategori,kategori_id) values(?,?)',[$sub,$idk]);
+        if($data){
+            return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
+        }else{
+            return redirect()->action('admin\BlogController@tulis')->with("psn",'Gagal Disimpan');
+        }
+
+    }
+
+    function upSK(Request $request){
+        $request->validate([
+            'id'=>'required',
+            'edit_subkategori'=>'required',
+            'idk'=>'required',
+        ]);
+        $sub=$request->edit_subkategori;
+        $idk=$request->idk;
+        $id=$request->id;
+
+      
+        $upsub=DB::table('sub_kategori')
+            ->where('id', $id)
+            ->update(
+                ['sub_kategori' => $sub],
+                ['kategori_id' => $idk]
+            );
+        if($upsub){
+            return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
+        }else{
+            return redirect()->action('admin\BlogController@tulis')->with("psn",'Gagal Disimpan');
+        }
+
+    }
+    function hapusSK($id){
+        $data=DB::table('sub_kategori')
+            ->where(['id' => $id])
+            ->delete();
+            if($data){
+                return redirect()->action('admin\BlogController@tulis')->with('psn','Data Berhasil dihapus');
+            }
+    }
+ 
     function inputArtikel(Request $request){
 
         if($request->hasFile('gambar')){
@@ -122,10 +176,11 @@ class BlogController extends Controller
         $request->validate([
             'judul'=>'required',
             'kategori'=>'required',
-            'gambar'=>'image|mimes:jpg,jpeg,png|max:4096',
             'isi'=>'required',
         ]);
         if($request->hasFile('gambar')){
+            $old=$request->gambarLama;
+            File::delete('source/artikel/'.$old);
             $id=$request->idar;
             $img=$request->file('gambar');
             $nama=time().'-'.$img->getClientOriginalName();

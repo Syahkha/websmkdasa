@@ -49,9 +49,20 @@
                                             <li><a href="index.html">Galeri</a></li>
                                         </ul>
                                     <span class="dd-trigger"></span><span class="dd-arrow"></span></li>
-                            <li><a href="#course">Program Keahlian</a></li>
                             <li><a href="">PPDB</a></li>
                             <li><a href="{{url('tampilblog')}}">Berita</a></li>
+
+                            @foreach($menu as $m)
+                            <li class="cn-dropdown-item has-down pr12"><a href="#">{{$m->kategori}}</a>
+                                        
+                                        <ul class="dropdown">
+                                            @foreach($m->sub_kategori as $s)
+                                            <li><a href="">{{$s->sub_kategori}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    <span class="dd-trigger"></span><span class="dd-arrow"></span>
+                            </li>
+                            @endforeach
                             <li><a href="#">Kontak Kami</a></li>
                         </ul>
                     </div>

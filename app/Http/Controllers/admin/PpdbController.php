@@ -17,7 +17,7 @@ class PpdbController extends Controller
     }
 
     function daftar(){
-        return view('admin.ppdb.daftar');
+        return view('admin\ppdb\daftar');
     }
     function simpanD(Request $request){
         $request->validate([
@@ -98,8 +98,64 @@ class PpdbController extends Controller
         ->paginate(20);
         return view('admin.ppdb.ppdb_siswa',['ppdb'=>$data,'ppdbt'=>$datat]);
     }
-
+    function accSiswa($id){
+        $data=DB::update("update siswa set ppdb='terima' where id=?",[$id]);
+        if($data){
+            return redirect()->action('admin\PpdbController@ppdbSiswa')->with('msg','Data Berhasil Disimpan');
+        }else{
+            return redirect()->action('admin\PpdbController@ppdbSiswa')->with('msg','Data Gagal Disimpan');
+        }
+    }
+    function ditolakSiswa(Request $request){
+        $request->validate(['ket'=>'required']);
+        $id=$request->id;
+        $ket=$request->ket;
+        $data=DB::update("update siswa set ppdb='tolak' , ket=? where id=?",[$ket,$id]);
+        if($data){
+            return redirect()->action('admin\PpdbController@ppdbSiswa')->with('msg','Data Berhasil Disimpan');
+        }else{
+            return redirect()->action('admin\PpdbController@ppdbSiswa')->with('msg','Data Gagal Disimpan');
+        }
+    }
     function ppdbSiswi(){
-        return view('admin.ppdb.ppdb_siswi');
+        $data=DB::table('siswa')
+        ->leftjoin('orang_tua','siswa.idortu',"=",'orang_tua.idortu')
+        ->where(['ppdb'=>"belum",'gender'=>'Perempuan'])
+        ->select(DB::raw("siswa.id as ids, siswa.*,orang_tua.*"))
+        ->paginate(20);
+        $datat=DB::table('siswa')
+        ->leftjoin('orang_tua','siswa.idortu',"=",'orang_tua.idortu')
+        ->where(['ppdb'=>"tolak",'gender'=>'Perempuan'])
+        ->select(DB::raw("siswa.id as ids, siswa.*,orang_tua.*"))
+        ->paginate(20);
+        return view('admin.ppdb.ppdb_siswi',['ppdb'=>$data,'ppdbt'=>$datat]);
+    }
+    
+    function accSiswi($id){
+        $data=DB::update("update siswa set ppdb='terima' where id=?",[$id]);
+        if($data){
+            return redirect()->action('admin\PpdbController@ppdbSiswi')->with('msg','Data Berhasil Disimpan');
+        }else{
+            return redirect()->action('admin\PpdbController@ppdbSiswi')->with('msg','Data Gagal Disimpan');
+        }
+    }
+    function ditolakSiswi(Request $request){
+        $request->validate(['ket'=>'required']);
+        $id=$request->id;
+        $ket=$request->ket;
+        $data=DB::update("update siswa set ppdb='tolak' , ket=? where id=?",[$ket,$id]);
+        if($data){
+            return redirect()->action('admin\PpdbController@ppdbSiswi')->with('msg','Data Berhasil Disimpan');
+        }else{
+            return redirect()->action('admin\PpdbController@ppdbSiswi')->with('msg','Data Gagal Disimpan');
+        }
+    }
+    function print($id){
+        $data=DB::table('siswa')
+        ->leftJoin('orang_tua','orang_tua.idortu',"=",'siswa.idortu')
+        ->where('siswa.id',$id)
+        ->select(DB::raw("siswa.id as ids,siswa.*,orang_tua.*"))
+        ->paginate(20);
+        return view('admin.ppdb.print',['print'=>$data]);
     }
 }

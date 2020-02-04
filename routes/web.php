@@ -42,8 +42,17 @@ Route::get('data-siswi','admin\SiswaController@dataSiswi');
 // ppdb
 Route::get('daftar','admin\PpdbController@daftar');
 Route::post('simpan-daftar','admin\PpdbController@simpanD');
+Route::get('print-ppdb/{id}','admin\PpdbController@print');
+// =======================================================
+// siswa
 Route::get('ppdb-siswa','admin\PpdbController@ppdbSiswa');
+Route::get('acc-daftar-sa/{id}','admin\PpdbController@accSiswa');
+Route::post('ditolak-daftar-sa','admin\PpdbController@ditolakSiswa');
+// siswi
 Route::get('ppdb-siswi','admin\PpdbController@ppdbSiswi');
+Route::get('acc-daftar-si/{id}','admin\PpdbController@accSiswi');
+Route::post('ditolak-daftar-si','admin\PpdbController@ditolakSiswi');
+// =======================================================
 
 // blog
 Route::get('tulis','admin\BlogController@tulis');
@@ -56,6 +65,9 @@ Route::get('lock-artikel/{id}/{y}','admin\BlogController@lockA');
 Route::post('update-artikel','admin\BlogController@updateArtikel');
 Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');
 Route::post('cari-artikel','admin\BlogController@cari');
+Route::post('sub-kategori','admin\BlogController@subKategori');
+Route::post('update-sub','admin\BlogController@upSK');
+Route::get('hapus-Skategori/{id}','admin\BlogController@hapusSK');
 
 //front
 Route::get('/','user\frontendcontroller@index');

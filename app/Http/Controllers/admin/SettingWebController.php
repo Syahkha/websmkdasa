@@ -24,8 +24,7 @@ class SettingWebController extends Controller
     public function setweb(){
 
         $data=DB::select('select * from setting');
-       
-            return view('user.setting_web',['data'=>$data]);
+        return view('user.setting_web',['data'=>$data]);
         
     }
 
@@ -37,19 +36,6 @@ class SettingWebController extends Controller
         ]);
         
         $id=$request->id;
-        $name=$request->name;
-        $email=$request->email;
-        $kontak1=$request->kontak1;
-        $kontak2=$request->kontak2;
-        $alamat=$request->alamat;
-        $provinsi=$request->provinsi;
-        $kota=$request->kota;
-        $facebook=$request->facebook;
-        $instagram=$request->instagram;
-        $twitter=$request->twitter;
-        $youtube=$request->youtube;
-        $psb=$request->psb; 
-        $profil=$request->profil;
         //banner
         $bn=$request->file('banner');
         $nama=$request->file('banner')->getClientOriginalName();
@@ -66,8 +52,24 @@ class SettingWebController extends Controller
         $icopath=$this->icopath;
         $icon->move($icopath,$nc);
 
-        $setweb=DB::insert('insert into setting (webname,email,kontak1,kontak2,alamat,provinsi,kota,facebook,instagram,twitter,youtube,psb,profil,banner,logo,icon,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-        [$name,$email,$kontak1,$kontak2,$alamat,$provinsi,$kota,$facebook,$instagram,$twitter,$youtube,$psb,$profil,$nama,$nl,$nc,$id]);
+        $setweb=SettingModel::insert([
+            'webname'=>$request->name,
+            'profil'=>$request->profil,
+            'email'=>$request->email,
+            'kontak1'=>$request->kontak1,
+            'kontak2'=>$request->kontak2,
+            'alamat'=>$request->alamat,
+            'kota'=>$request->kota,
+            'provinsi'=>$request->provinsi,
+            'facebook'=>$request->facebook,
+            'twitter'=>$request->twitter,
+            'instagram'=>$request->instagram,
+            'youtube'=>$request->youtube,
+            'psb'=>$request->psb,
+            'banner'=>$nama,
+            'logo'=>$nl,
+            'icon'=>$nc,
+        ]);
         if($setweb){
             return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Berhasil Disimpan");
         }else{
