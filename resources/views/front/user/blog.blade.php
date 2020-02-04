@@ -68,9 +68,6 @@ Blog
                             @foreach($kategori as $k)
                                 <li><a href="#">{{$k->kategori}}</a></li>
                             @endforeach
-                            @foreach($sub as $sub)
-                                <li><a href="#">{{$sub->sub_kategori}}</a></li>
-                            @endforeach
                             </ul>
                         </div>
 
@@ -78,53 +75,21 @@ Blog
                         <div class="latest-blog-posts mb-30">
                             <h5>Baca Juga</h5>
                             <!-- Single Latest Blog Post -->
+                            @foreach ($bacajuga as $item)
                             <div class="single-latest-blog-post d-flex mb-30">
+                                
                                 <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-1.jpg" alt="">
+                                    <img src="{{asset('source/artikel/'.$item->gambar)}}" alt="">
                                 </div>
                                 <div class="latest-blog-post-content">
                                     <a href="#" class="post-title">
-                                        <h6>New Courses for you</h6>
+                                        <h6>{{ $item->judul }}</h6>
                                     </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
+                                    <a href="#" class="post-date">{{ $item->tanggal }}</a>
                                 </div>
+                                
                             </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-2.jpg" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>A great way to start</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-3.jpg" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>New Courses for you</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-4.jpg" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>Start your training</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
 
                         <!-- Add Widget -->

@@ -31,13 +31,21 @@ class frontendController extends Controller
             ->join('users', 'users.id', '=', 'artikel.id_admin')
             ->select('artikel.*', 'users.name')
             ->get();
+        
+        $bacajuga = DB::table('artikel')
+        ->inRandomOrder()
+        ->limit(4)
+            ->get();
+
+       
+
 
         return view('front.user.blog',[
             'setting'=>$websetting,
             'artikel'=>$artikel,
             'menu'=>$menu,
             'kategori'=>$kategori,
-           
+            'bacajuga' =>$bacajuga
         ]);
     }
 
