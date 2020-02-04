@@ -72,4 +72,4 @@ Route::get('hapus-Skategori/{id}','admin\BlogController@hapusSK');
 //front
 Route::get('/','user\frontendcontroller@index');
 Route::get('tampilblog','user\frontendcontroller@blog');
-Route::get('Blog/{kurl}','user\frontendcontroller@blogs');
+Route::get('detailartikel','user\frontendcontroller@detail_artikel');

@@ -15,13 +15,31 @@ Blog
                     <div class="academy-blog-posts">
                         <div class="row">
 
-            
+                            <!-- Single Blog Start -->
+                            <div class="col-12">
+                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                                    <!-- Post Thumb -->
+                                    <div class="blog-post-thumb mb-50">
+                                        <img src="img/blog-img/1.jpg" alt="">
+                                    </div>
+                                    <!-- Post Title -->
+                                    <a href="#" class="post-title">Top ten courses we love for you to try</a>
+                                    <!-- Post Meta -->
+                                    <div class="post-meta">
+                                        <p>By <a href="#">Simon Smith</a> | <a href="#">March 18, 2018</a> | <a href="#">3 comments</a></p>
+                                    </div>
+                                    <!-- Post Excerpt -->
+                                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod. Vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est.</p>
+                                    <!-- Read More btn -->
+                                    <a href="#" class="btn academy-btn btn-sm mt-15">Read More</a>
+                                </div>
+                            </div>
                             @foreach($artikel as $data)
                             <div class="col-12">
                                 <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                                     <!-- Post Thumb -->
                                     <div class="blog-post-thumb mb-50">
-                                        <img src="{{asset('source/artikel/'.$data->gambar)}}"  alt="">
+                                        <img src="{{asset('source/'.$data->gambar)}}"  alt="">
                                     </div>
                                     <!-- Post Title -->
                                     <a href="#" class="post-title">{{$data->judul}}</a>
@@ -30,26 +48,16 @@ Blog
                                         <p>Penulis <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
                                     </div>
                                     <!-- Post Excerpt -->
-                                    <p>{!!substr($data->artikel, 0, 100)!!}...</p>
+                                    <p>{!!substr($data->artikel, 0, 170)!!}...</p>
                                     <!-- Read More btn -->
-                                    <a href="" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
+                                    <a href="#" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
                                 </div>
                             </div>
                             @endforeach
 
                         </div>
                     </div>
-                    <!-- Pagination Area Start -->
-                    <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+
 
                 <div class="col-12 col-md-4">
                     <div class="academy-blog-sidebar">
@@ -65,12 +73,10 @@ Blog
                         <div class="blog-post-categories mb-30">
                             <h5>Categories</h5>
                             <ul>
-                            @foreach($kategori as $k)
-                                <li><a href="#">{{$k->kategori}}</a></li>
-                            @endforeach
-                            @foreach($sub as $sub)
-                                <li><a href="#">{{$sub->sub_kategori}}</a></li>
-                            @endforeach
+                                <li><a href="#">Courses</a></li>
+                                <li><a href="#">Education</a></li>
+                                <li><a href="#">Teachers</a></li>
+                                <li><a href="#">Uncategorized</a></li>
                             </ul>
                         </div>
 
