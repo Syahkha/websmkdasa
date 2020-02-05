@@ -14,8 +14,6 @@ Blog
                 <div class="col-12 col-md-8">
                     <div class="academy-blog-posts">
                         <div class="row">
-
-            
                             @foreach($artikel as $data)
                             <div class="col-12">
                                 <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
@@ -30,13 +28,12 @@ Blog
                                         <p>Penulis <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
                                     </div>
                                     <!-- Post Excerpt -->
-                                    <p>{!!substr($data->artikel, 0, 100)!!}...</p>
+                                    <p>{!!substr($data->artikel, 0, 1000)!!}...</p>
                                     <!-- Read More btn -->
-                                    <a href="" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
+                                    <a href="{{url('/detailartikel/'.$data->judul_url)}}" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
                                 </div>
                             </div>
                             @endforeach
-
                         </div>
                     </div>
                     <!-- Pagination Area Start -->
