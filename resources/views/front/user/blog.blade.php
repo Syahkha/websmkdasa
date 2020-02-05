@@ -3,8 +3,10 @@
 Blog
 @endsection
 @section('konten')
-<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-        <div class="bradcumbContent">
+@foreach($setting as $data)
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('source/banner/'.$data->banner)}});">
+@endforeach        
+    <div class="bradcumbContent">
             <h2>ARTIKEL</h2>
         </div>
     </div>
