@@ -54,5 +54,35 @@ class frontendController extends Controller
     function blogs($kurl){
         
     }
+
+    function detail_artikel($judul)
+    {
+        $websetting=DB::table('setting')->get();
+        
+        $artikel=DB::table('artikel')
+        ->join('users', 'users.id', '=', 'artikel.id_admin')
+        ->select('artikel.*', 'users.name')
+    	->where('judul_url',$judul)
+    	->limit(1)
+    	->get();
+        $nav = DB::table('kategori')
+        ->where(['edit'=>'N',"show"=>"Y"])
+        ->get();
+    	$artikellain = DB::table('artikel')
+    	->inRandomOrder()
+    	->limit(3)
+    	->get();
+
+    	$kategori = DB::table('kategori')->get();
+    	$websetting = DB::table('setting')->limit(1)->get();
+        $menu=Kategori::where('edit', 'N')->get();
+
+    	return view('front.user.detail_artikel',[
+            'setting'=>$websetting,
+            'menu'=>$menu,
+            'artikel'=>$artikel
+
+        ]);
+    }
     
 }
