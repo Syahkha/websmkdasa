@@ -14,11 +14,12 @@
                             </div>
                             @foreach($setting as $data)
                             <p>{{$data->profil}}</p>
-                            @endforeach
+                           
                             <div class="footer-social-info">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="https://facebook/{{$data->facebook}}"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                     

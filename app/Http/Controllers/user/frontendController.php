@@ -14,12 +14,14 @@ class frontendController extends Controller
     function index(){
         $websetting=DB::table('setting')->get();
         $menu=Kategori::where('edit', 'N')->get();
-
+        $galeri=DB::table('galeri')->get();
+        $studi=DB::table('jurusan')->get();
 
 
         return view('front.konten',
-            ['setting'=>$websetting],
+            ['setting'=>$websetting, 'galeri'=>$galeri,'studi'=>$studi],
             ['menu'=>$menu]
+           
         );
     }
     function blog(){

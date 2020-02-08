@@ -63,7 +63,9 @@
                 <!-- Calling Info -->
                 <div class="calling-info">
                     <div class="call-center">
-                        <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                    @foreach($setting as $data)
+                        <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>{{$data->kontak1}}</span></a>
+                    @endforeach
                     </div>
                 </div>
             </nav>

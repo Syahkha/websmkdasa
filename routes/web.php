@@ -33,6 +33,11 @@ Route::post('edit-user','user\User@editU');
 Route::get('setweb','admin\SettingWebController@setweb');
 Route::post('update-setting','admin\SettingWebController@updateSetting');
 Route::post('insert-setweb','admin\SettingWebController@inputSetweb');
+Route::post('tambah-galeri','admin\SettingWebController@inputGaleri');
+Route::get('hapus-galeri/{id_galeri}/{nama_galeri}','admin\SettingWebController@hapusGaleri');
+Route::post('tambah-studi','admin\SettingWebController@inputStudi');
+Route::post('update-studi','admin\SettingWebController@updateStudi');
+Route::get('hapus-studi/{id}','admin\SettingWebController@hapusStudi');
 
 // siswa
 Route::get('input-siswa','admin\SiswaController@inputSiswa');

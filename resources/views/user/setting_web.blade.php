@@ -104,6 +104,22 @@ Setting Web
                                 id="" class="form-control">
                         </div>
                     </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Instagram</label>
+                            <input placeholder="Isi Instagram" value="{{$item->instagram}}" type="text" name="instagram"
+                                id="" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Twitter</label>
+                            <input placeholder="Isi Twitter" value="{{$item->twitter}}" type="text" name="twitter" id=""
+                                class="form-control">
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Logo</label>
@@ -114,11 +130,12 @@ Setting Web
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">Instagram</label>
-                            <input placeholder="Isi Instagram" value="{{$item->instagram}}" type="text" name="instagram"
-                                id="" class="form-control">
+                            <label for="">Youtube</label>
+                            <input placeholder="Isi Youtube" value="{{$item->youtube}}" type="text" name="youtube" id=""
+                                class="form-control">
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">icon</label>
@@ -129,9 +146,9 @@ Setting Web
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">Twitter</label>
-                            <input placeholder="Isi Twitter" value="{{$item->twitter}}" type="text" name="twitter" id=""
-                                class="form-control">
+                            <label for="">Profil</label>
+                            <textarea placeholder="Isi Profil" rows="5" name="profil" id=""
+                                class="form-control">{{$item->profil}} </textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -140,20 +157,6 @@ Setting Web
                             <input value="{{$item->banner}}" type="hidden" name="edit_bannerlama" id="file"
                                 class="form-control">
                             <input placeholder="Isi Banner" type="file" name="banner" id="file" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">Youtube</label>
-                            <input placeholder="Isi Youtube" value="{{$item->youtube}}" type="text" name="youtube" id=""
-                                class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">Profil</label>
-                            <textarea placeholder="Isi Profil"  rows="5" name="profil" id=""
-                                class="form-control">{{$item->profil}} </textarea>
                         </div>
                     </div>
 
@@ -166,5 +169,193 @@ Setting Web
             </form>
         </div>
     </div>
+    <div class="row">
+    <div class="col-lg-6">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h5 class="m-0 font-weight-bold text-primary">Galeri</h5>
+        </div>
+        <div class="card-body">
+            <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal"
+                data-target="#add" title="Tambah User"><i class="fas fa-plus fa-sm"></i> Tambah Galeri</button>
+            <div class="form-group"></div>
+            <div class="table-responsive">
+            <table class="table table-striped table-bordered first">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no=1; ?>
+                        @foreach($galeri as $item)
+                        <tr>
+                            <th scope="row">{{$no++}}</th>
+                            <td>{{$item->nama_galeri}}</td>
+                            <td>
+                                <button class="btn btn-sm " data-toggle="modal"
+                                    data-target="#l{{$item->id_galeri}}"><span data-toggle="tooltip"
+                                        title="Lihat gambar" class="fa fa-eye"></span></button>
+                                <a href="{{url('hapus-galeri').'/'.$item->id_galeri.'/'.$item->nama_galeri}}"
+                                    class="btn btn-sm btn-danger"><span title="hapus gambar"
+                                        class="fa fa-trash"></span></a>
+                            </td>
+                        </tr>
+                        <!-- l -->
+                        <div class="modal" id="l{{$item->id_galeri}}" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Lihat Gambar</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="{{asset('source/galeri').'/'.$item->nama_galeri}}" alt=""
+                                            height="300px" width="90%"><br>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ll -->
+                        @endforeach
+                        <!-- Modal -->
+                        <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah gambar</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{url('tambah-galeri')}}" method="post"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Tambah Galeri</label>
+                                                <input type="file" name="nama_galeri" class="form-control"
+                                                    id="exampleFormControlInput1" placeholder="pilih gambar" required   >
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h5 class="m-0 font-weight-bold text-primary">Program Studi</h5>
+        </div>
+        <div class="card-body">
+            <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal"
+                data-target="#add_studi" title="Tambah User"><i class="fas fa-plus fa-sm"></i> Tambah Program Studi</button>
+            <div class="form-group"></div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered first">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no=1; ?>
+                        @foreach($studi as $item)
+                        <tr>
+                            <th scope="row">{{$no++}}</th>
+                            <td>{{$item->nama_jurusan}}</td>
+                            <td>
+                            <button data-toggle="modal" data-target="#edit{{$item->id}}" class="btn btn-success btn-sm" title="Edit Program Studi"><i class="fas fa-edit"></i></button>
+                                <a href="{{url('hapus-studi').'/'.$item->id}}"
+                                    class="btn btn-sm btn-danger"><span title="hapus gambar"
+                                        class="fa fa-trash"></span></a>
+                            </td>
+                        </tr>
+                        <!-- U -->
+                        <div class="modal" id="edit{{$item->id}}" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Lihat Gambar</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <form action="{{url('update-studi')}}" method="post"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1"> Tambah Program Studi</label>
+                                                <input type="hidden" value="{{$item->id}}" name="id">
+                                                <input type="text" value="{{$item->nama_jurusan}}" name="nama" class="form-control"
+                                                    id="exampleFormControlInput1" placeholder="Isi Nama Program Studi" required   >
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- UU -->
+                        @endforeach
+                        <!-- Modal -->
+                        <div class="modal fade" id="add_studi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Program Studi</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{url('tambah-studi')}}" method="post"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1"> Tambah Program Studi</label>
+                                                <input type="text" name="studi" class="form-control"
+                                                    id="exampleFormControlInput1" placeholder="Isi Nama Program Studi" required   >
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+   
 </div>
 @endsection
