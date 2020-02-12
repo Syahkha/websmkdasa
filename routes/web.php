@@ -33,6 +33,11 @@ Route::post('edit-user','user\User@editU');
 Route::get('setweb','admin\SettingWebController@setweb');
 Route::post('update-setting','admin\SettingWebController@updateSetting');
 Route::post('insert-setweb','admin\SettingWebController@inputSetweb');
+Route::post('tambah-galeri','admin\SettingWebController@inputGaleri');
+Route::get('hapus-galeri/{id_galeri}/{nama_galeri}','admin\SettingWebController@hapusGaleri');
+Route::post('tambah-studi','admin\SettingWebController@inputStudi');
+Route::post('update-studi','admin\SettingWebController@updateStudi');
+Route::get('hapus-studi/{id}','admin\SettingWebController@hapusStudi');
 
 // data siswa/siswi
 // =======================================================
@@ -72,6 +77,9 @@ Route::get('lock-artikel/{id}/{y}','admin\BlogController@lockA');
 Route::post('update-artikel','admin\BlogController@updateArtikel');
 Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');
 Route::post('cari-artikel','admin\BlogController@cari');
+Route::post('sub-kategori','admin\BlogController@subKategori');
+Route::post('update-sub','admin\BlogController@upSK');
+Route::get('hapus-Skategori/{id}','admin\BlogController@hapusSK');
 
 // tahun
 Route::get('tahun','admin\tahunController@tahun');
@@ -82,3 +90,4 @@ Route::get('tampilblog','user\frontendcontroller@blog');
 
 //excel 
 Route::get('download-excelsiswa','user\user@dexcelsiswa');
+Route::get('detailartikel/{judul}','user\frontendcontroller@detail_artikel');

@@ -3,9 +3,11 @@
 Blog
 @endsection
 @section('konten')
-<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-        <div class="bradcumbContent">
-            <h2>The News</h2>
+@foreach($setting as $data)
+<div class="breadcumb-area bg-img" style="background-image: url({{asset('source/banner/'.$data->banner)}});">
+@endforeach        
+    <div class="bradcumbContent">
+            <h2>ARTIKEL</h2>
         </div>
     </div>
     <div class="blog-area mt-50 section-padding-100">
@@ -14,32 +16,12 @@ Blog
                 <div class="col-12 col-md-8">
                     <div class="academy-blog-posts">
                         <div class="row">
-
-                            <!-- Single Blog Start -->
-                            <div class="col-12">
-                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
-                                    <!-- Post Thumb -->
-                                    <div class="blog-post-thumb mb-50">
-                                        <img src="img/blog-img/1.jpg" alt="">
-                                    </div>
-                                    <!-- Post Title -->
-                                    <a href="#" class="post-title">Top ten courses we love for you to try</a>
-                                    <!-- Post Meta -->
-                                    <div class="post-meta">
-                                        <p>By <a href="#">Simon Smith</a> | <a href="#">March 18, 2018</a> | <a href="#">3 comments</a></p>
-                                    </div>
-                                    <!-- Post Excerpt -->
-                                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod. Vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est.</p>
-                                    <!-- Read More btn -->
-                                    <a href="#" class="btn academy-btn btn-sm mt-15">Read More</a>
-                                </div>
-                            </div>
                             @foreach($artikel as $data)
                             <div class="col-12">
                                 <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                                     <!-- Post Thumb -->
                                     <div class="blog-post-thumb mb-50">
-                                        <img src="{{asset('source/'.$data->gambar)}}"  alt="">
+                                        <img src="{{asset('source/artikel/'.$data->gambar)}}"  alt="">
                                     </div>
                                     <!-- Post Title -->
                                     <a href="#" class="post-title">{{$data->judul}}</a>
@@ -48,13 +30,12 @@ Blog
                                         <p>Penulis <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
                                     </div>
                                     <!-- Post Excerpt -->
-                                    <p>{!!substr($data->artikel, 0, 170)!!}...</p>
+                                    <p>{!!substr($data->artikel, 0, 1000)!!}...</p>
                                     <!-- Read More btn -->
-                                    <a href="#" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
+                                    <a href="{{url('/detailartikel/'.$data->judul_url)}}" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
                                 </div>
                             </div>
                             @endforeach
-
                         </div>
                     </div>
                     <!-- Pagination Area Start -->
@@ -83,64 +64,31 @@ Blog
                         <div class="blog-post-categories mb-30">
                             <h5>Categories</h5>
                             <ul>
-                                <li><a href="#">Courses</a></li>
-                                <li><a href="#">Education</a></li>
-                                <li><a href="#">Teachers</a></li>
-                                <li><a href="#">Uncategorized</a></li>
+                            @foreach($kategori as $k)
+                                <li><a href="#">{{$k->kategori}}</a></li>
+                            @endforeach
                             </ul>
                         </div>
 
                         <!-- Latest Blog Posts Area -->
                         <div class="latest-blog-posts mb-30">
-                            <h5>Latest Posts</h5>
+                            <h5>Baca Juga</h5>
                             <!-- Single Latest Blog Post -->
+                            @foreach ($bacajuga as $item)
                             <div class="single-latest-blog-post d-flex mb-30">
+                                
                                 <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-1.jpg" alt="">
+                                    <img src="{{asset('source/artikel/'.$item->gambar)}}" alt="">
                                 </div>
                                 <div class="latest-blog-post-content">
                                     <a href="#" class="post-title">
-                                        <h6>New Courses for you</h6>
+                                        <h6>{{ $item->judul }}</h6>
                                     </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
+                                    <a href="#" class="post-date">{{ $item->tanggal }}</a>
                                 </div>
+                                
                             </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-2.jpg" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>A great way to start</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-3.jpg" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>New Courses for you</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
-                            <!-- Single Latest Blog Post -->
-                            <div class="single-latest-blog-post d-flex">
-                                <div class="latest-blog-post-thumb">
-                                    <img src="img/blog-img/lb-4.jpg" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>Start your training</h6>
-                                    </a>
-                                    <a href="#" class="post-date">March 18, 2018</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
 
                         <!-- Add Widget -->

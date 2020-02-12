@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
@@ -15,7 +16,7 @@ class BlogController extends Controller
 
         //Definisikan Path
         $this->middleware('auth');
-        $this->path = public_path('/source');
+        $this->path = public_path('/source/artikel');
    
     }
 
@@ -29,15 +30,16 @@ class BlogController extends Controller
             'kategori'=>'required',
         ]);
         $kategori=$request->kategori;
+        $kurl=str_replace(' ','-',$kategori);
         if($request->menu=="N"){
-            $data=DB::insert('insert into kategori(kategori,edit) values(?,?)',[$kategori,"N"]);
+            $data=DB::insert('insert into kategori(kategori,edit,url_kategori) values(?,?,?)',[$kategori,"N",$kurl]);
             if($data){
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
             }else{
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Gagal Disimpan');
             }
         }else{
-            $data=DB::insert('insert into kategori(kategori) values(?)',[$kategori]);
+            $data=DB::insert('insert into kategori(kategori,url_kategori) values(?,?)',[$kategori,$kurl]);
             if($data){
                 return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
             }else{
@@ -54,10 +56,11 @@ class BlogController extends Controller
         ]);
         $id=$request->id;
         $kategori=$request->kategori;
+        $kurl=str_replace(' ','-',$kategori);
         if($request->menu=="N"){
-            $data=DB::update('update kategori set kategori=?,edit=? where id=?',[$kategori,"N",$id]);
+            $data=DB::update('update kategori set kategori=?,edit=?,url_kategori=? where id=?',[$kategori,"N",$kurl,$id]);
         }else{
-            $data=DB::update('update kategori set kategori=?,edit=? where id=?',[$kategori,"Y",$id]);
+            $data=DB::update('update kategori set kategori=?,edit=?,url_kategori=? where id=?',[$kategori,"Y",$kurl,$id]);
         }
         if($data){
             return redirect()->action('admin\BlogController@tulis')->with("psn",'Berhasil Disimpan');
@@ -70,9 +73,10 @@ class BlogController extends Controller
     function hapusK($id){
         $data=DB::delete('delete from kategori where id=?',[$id]);
         if($data){
-            return redirect()->action('admin\BlogController@dataPenulisan')->with('msg','Data Berhasil dihapus');
+            return redirect()->action('admin\BlogController@tulis')->with('psn','Data Berhasil dihapus');
         }
     }
+ 
     function inputArtikel(Request $request){
 
         if($request->hasFile('gambar')){
@@ -122,10 +126,11 @@ class BlogController extends Controller
         $request->validate([
             'judul'=>'required',
             'kategori'=>'required',
-            'gambar'=>'image|mimes:jpg,jpeg,png|max:4096',
             'isi'=>'required',
         ]);
         if($request->hasFile('gambar')){
+            $old=$request->gambarLama;
+            File::delete('source/artikel/'.$old);
             $id=$request->idar;
             $img=$request->file('gambar');
             $nama=time().'-'.$img->getClientOriginalName();
@@ -145,14 +150,13 @@ class BlogController extends Controller
             }
         } else{
             $id=$request->idar;
-            $old=$request->old;
             $ju=$request->judul;
             $jurl=str_replace(' ','-',$ju);
             $is=$request->isi;
             $tgl=date('d-m-Y H:i:s');
             $ida=$request->id;
             $idk=$request->kategori;
-            $data=DB::update('update artikel set judul=?,judul_url=?,artikel=?,tanggal=?,id_admin=?,gambar=?,idkategori=? where id=?',[$ju,$jurl,$is,$tgl,$ida,$old,$idk,$id]);
+            $data=DB::update('update artikel set judul=?,judul_url=?,artikel=?,tanggal=?,id_admin=?,idkategori=? where id=?',[$ju,$jurl,$is,$tgl,$ida,$idk,$id]);
             if($data){
                 return redirect()->action('admin\BlogController@dataPenulisan')->with("msg","Artikel Berhasil Disimpan");
             }else{
