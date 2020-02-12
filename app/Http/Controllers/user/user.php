@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Siswa;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SiswaExport;
 
 class User extends Controller
 {
@@ -108,5 +111,15 @@ class User extends Controller
                 return redirect()->action('user\User@dataU')->with('msg',"Gagal Disimpan");
             }
         }
+    }
+    function dexcelsiswa(){
+        // $data=santri::get()->toArray();
+       // return Excel::create('Data Santri', function($excel) use ($data) {
+       //     $excel->sheet('mySheet', function($sheet) use ($data)
+       //     {
+       //         $sheet->fromArray($data);
+       //     });
+       // })->download("xlsx");
+        return Excel::download(new SiswaExport,date('Y-m-d').'-Data Siswa.xlsx');
     }
 }

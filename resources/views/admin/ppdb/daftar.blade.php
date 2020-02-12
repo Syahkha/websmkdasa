@@ -16,7 +16,7 @@ Daftar Siswa
         @endif
         @if(Session('msg'))
             <div class="alert alert-primary alert-dismissible" role="alert">
-                <p align="center">{{Session('msg')}}</p> Lihat Data Pendaftaran Putra/Putri
+                <p align="center">{{Session('msg')}}</p> Lihat Data <a href="{{url('data-siswa')}}">Siswa</a>/<a href="{{url('data-siswi')}}">Siswi</a>
                 <button class="close" type="button" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">x</span>
                 </button>
@@ -58,7 +58,33 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name="nomor_pendaftaran" placeholder="Nomor Pendaftaran" class="form-control">
+                                <input type="text" name="nomor_pendaftaran" value="<?php 
+                                    $np=DB::table("siswa")
+                                    ->select(DB::raw("MAX(RIGHT(no_pendaftaran,3)) as kd_max"));
+                                    if($np->count()>0){
+                                        foreach ($np->get() as $nop) {
+                                            $tmp=((int)$nop->kd_max)+1;
+                                            $final="".sprintf('%03s',$tmp);
+                                        }
+                                    }else{
+                                        $final=""."001";
+                                    }
+                                    echo $final;
+                                    ?>" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="">
+                                <label for="">Tahun Ajaran</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <select name="tahun_ajaran" id="tahun_ajaran" class="form-control" required>
+                                    @foreach ($th as $item)
+                                        <option value="{{$item->id}}">{{$item->tahun}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -115,7 +141,7 @@ Daftar Siswa
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" readonly  class="form-control pull-right tgl" name="tanggal_lahir" placeholder="{{date('d-m-Y')}}" id="datepicker">
+                                <input type="text" readonly  class="form-control pull-right tgl" name="tanggal_lahir" value="{{date('d-m-Y')}}" id="datepicker">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -515,7 +541,7 @@ Daftar Siswa
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-4">                                        
-                                        <input type="radio" name="jarak_rumah" value="Kurang Dari 1 Kilometer"> Kurang Dari 1 Kilometer<br>
+                                        <input type="radio" name="jarak_rumah" value="Kurang dari 1 Kilometer"> Kurang dari 1 Kilometer<br>
                                     </div>
                                     <div class="col-md-4">
                                         <input type="radio" name="jarak_rumah" value="Lebih dari 1 Kilometer"> Lebih dari 1 Kilometer<br>
@@ -555,7 +581,7 @@ Daftar Siswa
     </div>
 @endsection
 @section('js')
-    <script src="{{asset('admin/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('admin/js/bootstrap-datepicker.min.js')}}"></script>
     <script>
         $("[id='gj']").on('keyup', function(){
         var n = parseInt($(this).val().replace(/\D/g,''),10);
@@ -571,5 +597,5 @@ Daftar Siswa
             viewMode: "years", 
             minViewMode: "years",
         });
-    </script>
+</script>
 @endsection

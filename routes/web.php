@@ -34,10 +34,17 @@ Route::get('setweb','admin\SettingWebController@setweb');
 Route::post('update-setting','admin\SettingWebController@updateSetting');
 Route::post('insert-setweb','admin\SettingWebController@inputSetweb');
 
+// data siswa/siswi
+// =======================================================
 // siswa
-Route::get('input-siswa','admin\SiswaController@inputSiswa');
 Route::get('data-siswa','admin\SiswaController@dataSiswa');
+Route::post('update-siswa','admin\SiswaController@updateSiswa');
+Route::get('hapus-siswa/{id}/{idortu}','admin\SiswaController@hapusSiswa');
+// siswi
 Route::get('data-siswi','admin\SiswaController@dataSiswi');
+Route::post('update-siswi','admin\SiswaController@updateSiswi');
+Route::get('hapus-siswi/{id}/{idortu}','admin\SiswaController@hapusSiswi');
+// =======================================================
 
 // ppdb
 Route::get('daftar','admin\PpdbController@daftar');
@@ -66,6 +73,12 @@ Route::post('update-artikel','admin\BlogController@updateArtikel');
 Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');
 Route::post('cari-artikel','admin\BlogController@cari');
 
+// tahun
+Route::get('tahun','admin\tahunController@tahun');
+
 //front
 Route::get('/','user\frontendcontroller@index');
 Route::get('tampilblog','user\frontendcontroller@blog');
+
+//excel 
+Route::get('download-excelsiswa','user\user@dexcelsiswa');

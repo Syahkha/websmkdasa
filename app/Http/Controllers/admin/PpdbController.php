@@ -17,13 +17,17 @@ class PpdbController extends Controller
     }
 
     function daftar(){
-        return view('admin\ppdb\daftar');
+        $th=DB::table('tahun')
+        ->paginate();
+        return view('admin\ppdb\daftar',['th'=>$th]);
     }
     function simpanD(Request $request){
         $request->validate([
             'nisn'=>'required',
-            'nik'=>'required'
+            'nik'=>'required',
+            'tahun_ajaran'=>'required'
         ]);
+        $th=$request->tahun_ajaran;
         $hari_d=$request->hari_tanggal;
         $no_p=$request->nomor_pendaftaran;
         $nama_s=$request->nama_siswa;
@@ -73,11 +77,13 @@ class PpdbController extends Controller
         if($cek){
             return redirect()->action('admin\PpdbController@daftar')->with("msg","No NIK Sudah ada");
         }else{
-            $datao=DB::insert('insert into orang_tua(idortu,nama_ayah,tahun_lahir_ayah,jenjang_pendidikan_ayah,pekerjaan_ayah,penghasilan_ayah,kebutuhan_khusus_ayah,no_hp_ayah,nama_ibu,tahun_lahir_ibu,jenjang_pendidikan_ibu,pekerjaan_ibu,penghasilan_ibu,kebutuhan_khusus_ibu,no_hp_ibu) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-        [$nik,$nama_a,$thl_a,$jjg_a,$pekerjaan_a,$penghasilan_a,$kh_a,$hp_a,$nama_i,$thl_i,$jjg_i,$pekerjaan_i,$penghasilan_i,$kh_i,$hp_i]);
+            $datao=DB::insert('insert into orang_tua(idortu,nama_ayah,tahun_lahir_ayah,jenjang_pendidikan_ayah,pekerjaan_ayah,penghasilan_ayah,kebutuhan_khusus_ayah,no_hp_ayah,nama_ibu,tahun_lahir_ibu,jenjang_pendidikan_ibu,pekerjaan_ibu,penghasilan_ibu,kebutuhan_khusus_ibu,no_hp_ibu) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+                $nik,$nama_a,$thl_a,$jjg_a,$pekerjaan_a,$penghasilan_a,$kh_a,$hp_a,$nama_i,$thl_i,$jjg_i,$pekerjaan_i,$penghasilan_i,$kh_i,$hp_i
+            ]);
         }
-        $datas=DB::insert('insert into siswa(idortu,hari_tanggal,no_pendaftaran,nama_lengkap,gender,nisn,tempat_lahir,ttl,nik,agama,kebutuhan_khusus,alamat,rt,rw,dusun,kelurahan,kecamatan,kode_pos,jenis_tinggal,alat_transportasi,telp,hp,email,no_peserta_un,penerima_kip,no_kip,berat_badan,tinggi_badan,jarak_rumah_sekolah,waktu_tempuh,jumlah_saudara,ppdb) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-        [$nik,$hari_d,$no_p,$nama_s,$jk,$nisn,$tl,$tgll,$nik,$agama,$kh_s,$almt,$rt,$rw,$dsn,$kel,$kec,$kode_p,$jt,$at,$telp_s,$hp_s,$email,$no_un,$p_kip,$no_kip,$berat,$tinggi,$jarak,$waktu_t,$jml_sdr,'terima']);
+        $datas=DB::insert('insert into siswa(idortu,idtahun,hari_tanggal,no_pendaftaran,nama_lengkap,gender,nisn,tempat_lahir,ttl,nik,agama,kebutuhan_khusus,alamat,rt,rw,dusun,kelurahan,kecamatan,kode_pos,jenis_tinggal,alat_transportasi,telp,hp,email,no_peserta_un,penerima_kip,no_kip,berat_badan,tinggi_badan,jarak_rumah_sekolah,waktu_tempuh,jumlah_saudara,ppdb) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+            $nik,$th,$hari_d,$no_p,$nama_s,$jk,$nisn,$tl,$tgll,$nik,$agama,$kh_s,$almt,$rt,$rw,$dsn,$kel,$kec,$kode_p,$jt,$at,$telp_s,$hp_s,$email,$no_un,$p_kip,$no_kip,$berat,$tinggi,$jarak,$waktu_t,$jml_sdr,'terima'
+        ]);
         if($datas){
             return redirect()->action('admin\PpdbController@daftar')->with("msg","Data Berhasil Disimpan");
         }else{
@@ -88,11 +94,13 @@ class PpdbController extends Controller
     function ppdbSiswa(){
         $data=DB::table('siswa')
         ->leftjoin('orang_tua','siswa.idortu',"=",'orang_tua.idortu')
+        ->leftjoin('tahun','siswa.idtahun','=','tahun.id')
         ->where(['ppdb'=>"belum",'gender'=>'Laki-Laki'])
         ->select(DB::raw("siswa.id as ids, siswa.*,orang_tua.*"))
         ->paginate(20);
         $datat=DB::table('siswa')
         ->leftjoin('orang_tua','siswa.idortu',"=",'orang_tua.idortu')
+        ->leftjoin('tahun','siswa.idtahun','=','tahun.id')
         ->where(['ppdb'=>"tolak",'gender'=>'Laki-Laki'])
         ->select(DB::raw("siswa.id as ids, siswa.*,orang_tua.*"))
         ->paginate(20);
@@ -120,11 +128,13 @@ class PpdbController extends Controller
     function ppdbSiswi(){
         $data=DB::table('siswa')
         ->leftjoin('orang_tua','siswa.idortu',"=",'orang_tua.idortu')
+        ->leftjoin('tahun','siswa.idtahun','=','tahun.id')
         ->where(['ppdb'=>"belum",'gender'=>'Perempuan'])
         ->select(DB::raw("siswa.id as ids, siswa.*,orang_tua.*"))
         ->paginate(20);
         $datat=DB::table('siswa')
         ->leftjoin('orang_tua','siswa.idortu',"=",'orang_tua.idortu')
+        ->leftjoin('tahun','siswa.idtahun','=','tahun.id')
         ->where(['ppdb'=>"tolak",'gender'=>'Perempuan'])
         ->select(DB::raw("siswa.id as ids, siswa.*,orang_tua.*"))
         ->paginate(20);
@@ -153,8 +163,9 @@ class PpdbController extends Controller
     function print($id){
         $data=DB::table('siswa')
         ->leftJoin('orang_tua','orang_tua.idortu',"=",'siswa.idortu')
+        ->leftjoin('tahun','siswa.idtahun','=','tahun.id')
         ->where('siswa.id',$id)
-        ->select(DB::raw("siswa.id as ids,siswa.*,orang_tua.*"))
+        ->select(DB::raw("siswa.id as ids, tahun.id as idth, siswa.*, tahun.*, orang_tua.*"))
         ->paginate(20);
         return view('admin.ppdb.print',['print'=>$data]);
     }

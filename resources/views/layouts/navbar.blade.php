@@ -36,13 +36,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#sm_santri" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-address-card"></i>
-          <span>Siswa</span>
+          <span>Data Siswa/Siswi</span>
         </a>
         <div id="sm_santri" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">            
-            <a class="collapse-item" href="{{url('input-siswa')}}">Input Siswa</a>
-            <a class="collapse-item" href="{{url('data-siswa')}}">Data Siswa Putra</a>
-            <a class="collapse-item" href="{{url('data-siswi')}}">Data Siswa Putri</a>
+            {{-- <a class="collapse-item" href="{{url('input-siswa')}}">Input Siswa</a> --}}
+            <a class="collapse-item" href="{{url('data-siswa')}}">Data Siswa</a>
+            <a class="collapse-item" href="{{url('data-siswi')}}">Data Siswi</a>
           </div>
         </div>
       </li>
@@ -53,9 +53,10 @@
         </a>
         <div id="sm_psb" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">            
-            <a class="collapse-item" href="{{url('daftar')}}">Daftarkan Siswa</a>
-            <a class="collapse-item" href="{{url('ppdb-siswa')}}">Data PSB Siswa Putra</a>
-            <a class="collapse-item" href="{{url('ppdb-siswi')}}">Data PSB Siswa Putri</a>
+            <a class="collapse-item" href="{{url('daftar')}}">Daftarkan Siswa/Siswi</a>
+            <a class="collapse-item" href="{{url('ppdb-siswa')}}">Data PPDB Siswa</a>
+            <a class="collapse-item" href="{{url('ppdb-siswi')}}">Data PPDB Siswi</a>
+            <a href="{{url('tahun')}}" class="collapse-item">Tahun Ajaran</a>
           </div>
         </div>
       </li>

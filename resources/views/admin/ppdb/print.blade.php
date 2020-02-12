@@ -46,23 +46,7 @@
                                 <label for="" text-align="right">23.</label><br>
                                 <label for="" text-align="right">24.</label><br>
                                 <label for="" text-align="right">25.</label><br>
-                                <label for="" text-align="right"><b>26.</b></label><br>
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-4">
-                                        <div class="row">
-                                            <div class="col-md-4"></div>
-                                            <div class="col-md-0">
-                                                <label for="">a.</label><br>
-                                                <label for="">b.</label><br>
-                                                <label for="">c.</label><br>
-                                                <label for="">d.</label><br>
-                                                <label for="">e.</label><br>
-                                                <label for="">f.</label><br>
-                                                <label for="">g.</label><br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <label for="" text-align="right">26.</label><br>
                                 <label for="" text-align="right"><b>27.</b></label><br>
                                 <div class="row">
                                     <div class="col-md-12 col-sm-4">
@@ -80,15 +64,35 @@
                                         </div>
                                     </div>
                                 </div>
-                                <label for="" text-align="right">28.</label><br>
+                                <label for="" text-align="right"><b>28.</b></label><br>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-4">
+                                        <div class="row">
+                                            <div class="col-md-4"></div>
+                                            <div class="col-md-0">
+                                                <label for="">a.</label><br>
+                                                <label for="">b.</label><br>
+                                                <label for="">c.</label><br>
+                                                <label for="">d.</label><br>
+                                                <label for="">e.</label><br>
+                                                <label for="">f.</label><br>
+                                                <label for="">g.</label><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="page-break-before:always; margin-top: 100px;">
                                 <label for="" text-align="right">29.</label><br>
                                 <label for="" text-align="right">30.</label><br>
                                 <label for="" text-align="right">31.</label><br>
                                 <label for="" text-align="right">32.</label><br>
+                                <label for="" text-align="right">33.</label><br>
+                                </div>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <label for="">Hari, Tanggal</label><br>
                                 <label for="">Nomor Pendaftaran</label><br>
+                                <label for="">Tahun Ajaran</label><br>
                                 <label for="">Nama Lengkap</label><br>
                                 <label for="">Jenis Kelamin</label><br>
                                 <label for="">NISN </label><br>
@@ -142,11 +146,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <label for="">Berat Badan</label><br>
-                                <label for="">Tinggi Badan</label><br>
-                                <label for="">Jarak Rumah ke Sekolah</label><br>
-                                <label for="">Waktu Tempuh ke Sekolah</label>
-                                <label for="">Jumlah Saudara Kandung</label><br>
+                                <div style="page-break-before:always; margin-top: 100px;">
+                                    <label for="">Berat Badan</label><br>
+                                    <label for="">Tinggi Badan</label><br>
+                                    <label for="">Jarak Rumah ke Sekolah</label><br>
+                                    <label for="">Waktu Tempuh ke Sekolah</label>
+                                    <label for="">Jumlah Saudara Kandung</label><br>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="">: <?php
@@ -154,6 +160,7 @@
                                         echo ''.indonesian_date($tanggal, 'l, d/F/Y'); 
                                     ?></label><br>
                                 <label for="">: {{$item->no_pendaftaran}}</label><br>
+                                <label for="">: {{$item->tahun}}</label><br>
                                 <label for="">: {{$item->nama_lengkap}}</label><br>
                                 <label for="">: {{$item->gender}}</label><br>
                                 <label for="">: {{$item->nisn}}</label><br>
@@ -193,11 +200,13 @@
                                 <label for="">: {{$item->penghasilan_ibu}}</label><br>
                                 <label for="">: {{$item->kebutuhan_khusus_ibu}}</label><br>
                                 <label for="">: {{$item->no_hp_ibu}}</label><br>
-                                <label for="">: {{$item->berat_badan}}</label><br>
-                                <label for="">: {{$item->tinggi_badan}}</label><br>
-                                <label for="">: {{$item->jarak_rumah_sekolah}}</label><br>
-                                <label for="">: {{$item->waktu_tempuh}}</label><br>
-                                <label for="">: {{$item->jumlah_saudara}}</label><br>
+                                <div style="page-break-before:always; margin-top: 100px;">
+                                    <label for="">: {{$item->berat_badan}}</label><br>
+                                    <label for="">: {{$item->tinggi_badan}}</label><br>
+                                    <label for="">: {{$item->jarak_rumah_sekolah}}</label><br>
+                                    <label for="">: {{$item->waktu_tempuh}}</label><br>
+                                    <label for="">: {{$item->jumlah_saudara}}</label><br>
+                                </div>
                                 <br><br>
                             </div>
                         </div>
