@@ -44,6 +44,7 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="{{url('/')}}">Home</a></li>
+                            <li><a href="#profil">Profil</a></li>
                             <li><a href="">PPDB</a></li>
                             <li><a href="{{url('tampilblog')}}">Berita</a></li>
 
@@ -54,7 +55,7 @@
                             </li>
                           
                             @endforeach
-                            <li><a href="#">Kontak Kami</a></li>
+                            <li><a href="#footer">Kontak Kami</a></li>
                         </ul>
                     </div>
                     <!-- Nav End -->

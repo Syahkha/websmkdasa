@@ -5,99 +5,102 @@ Blog
 @section('konten')
 @foreach($setting as $data)
 <div class="breadcumb-area bg-img" style="background-image: url({{asset('source/banner/'.$data->banner)}});">
-@endforeach        
+    @endforeach
     <div class="bradcumbContent">
-            <h2>ARTIKEL</h2>
-        </div>
+        <h2>ARTIKEL</h2>
     </div>
-    <div class="blog-area mt-50 section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-8">
-                    <div class="academy-blog-posts">
-                        <div class="row">
-                            @foreach($artikel as $data)
-                            <div class="col-12">
-                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
-                                    <!-- Post Thumb -->
-                                    <div class="blog-post-thumb mb-50">
-                                        <img src="{{asset('source/artikel/'.$data->gambar)}}"  alt="">
-                                    </div>
-                                    <!-- Post Title -->
-                                    <a href="#" class="post-title">{{$data->judul}}</a>
-                                    <!-- Post Meta -->
-                                    <div class="post-meta">
-                                        <p>Penulis <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
-                                    </div>
-                                    <!-- Post Excerpt -->
-                                    <p>{!!substr($data->artikel, 0, 1000)!!}...</p>
-                                    <!-- Read More btn -->
-                                    <a href="{{url('/detailartikel/'.$data->judul_url)}}" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
+</div>
+<div class="blog-area mt-50 section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="academy-blog-posts">
+                    <div class="row">
+                        @foreach($artikel as $data)
+                        <div class="col-12">
+                            <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms"
+                                style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+                                <!-- Post Thumb -->
+                                <div class="blog-post-thumb mb-50">
+                                    <img src="{{asset('source/artikel/'.$data->gambar)}}" alt="">
                                 </div>
+                                <!-- Post Title -->
+                                <a href="#" class="post-title">{{$data->judul}}</a>
+                                <!-- Post Meta -->
+                                <div class="post-meta">
+                                    <p>Penulis <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
+                                </div>
+                                <!-- Post Excerpt -->
+                                <p>{!!substr($data->artikel, 0, 1000)!!}...</p>
+                                <!-- Read More btn -->
+                                <a href="{{url('/detailartikel/'.$data->judul_url)}}"
+                                    class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
                             </div>
-                            @endforeach
                         </div>
-                    </div>
-                    <!-- Pagination Area Start -->
-                    <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
-                        </nav>
+                        @endforeach
                     </div>
                 </div>
+                <!-- Pagination Area Start -->
+                <div class="academy-pagination-area wow fadeInUp" data-wow-delay="400ms"
+                    style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item"><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="academy-blog-sidebar">
-                        <!-- Blog Post Widget -->
-                        <div class="blog-post-search-widget mb-30">
-                            <form action="#" method="post">
-                                <input type="search" name="search" id="Search" placeholder="Search">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
+            <div class="col-12 col-md-4">
+                <div class="academy-blog-sidebar">
+                    <!-- Blog Post Widget -->
+                    <div class="blog-post-search-widget mb-30">
+                        <form action="#" method="post">
+                            <input type="search" name="search" id="Search" placeholder="Search">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
 
-                        <!-- Blog Post Catagories -->
-                        <div class="blog-post-categories mb-30">
-                            <h5>Categories</h5>
-                            <ul>
+                    <!-- Blog Post Catagories -->
+                    <div class="blog-post-categories mb-30">
+                        <h5>Categories</h5>
+                        <ul>
                             @foreach($kategori as $k)
-                                <li><a href="#">{{$k->kategori}}</a></li>
+                            <li><a href="#">{{$k->kategori}}</a></li>
                             @endforeach
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
 
-                        <!-- Latest Blog Posts Area -->
-                        <div class="latest-blog-posts mb-30">
-                            <h5>Baca Juga</h5>
-                            <!-- Single Latest Blog Post -->
-                            @foreach ($bacajuga as $item)
-                            <div class="single-latest-blog-post d-flex mb-30">
-                                
-                                <div class="latest-blog-post-thumb">
-                                    <img src="{{asset('source/artikel/'.$item->gambar)}}" alt="">
-                                </div>
-                                <div class="latest-blog-post-content">
-                                    <a href="#" class="post-title">
-                                        <h6>{{ $item->judul }}</h6>
-                                    </a>
-                                    <a href="#" class="post-date">{{ $item->tanggal }}</a>
-                                </div>
-                                
+                    <!-- Latest Blog Posts Area -->
+                    <div class="latest-blog-posts mb-30">
+                        <h5>Baca Juga</h5>
+                        <!-- Single Latest Blog Post -->
+                        @foreach ($bacajuga as $item)
+                        <div class="single-latest-blog-post d-flex mb-30">
+
+                            <div class="latest-blog-post-thumb">
+                                <img src="{{asset('source/artikel/'.$item->gambar)}}" alt="">
                             </div>
-                            @endforeach
-                        </div>
+                            <div class="latest-blog-post-content">
+                                <a href="#" class="post-title">
+                                    <h6>{{ $item->judul }}</h6>
+                                </a>
+                                <a href="#" class="post-date">{{ $item->tanggal }}</a>
+                            </div>
 
-                        <!-- Add Widget -->
-                        <div class="add-widget">
-                            <a href="#"><img src="img/blog-img/add.png" alt=""></a>
                         </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Add Widget -->
+                    <div class="add-widget">
+                        <a href="#"><img src="img/blog-img/add.png" alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

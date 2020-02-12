@@ -14,7 +14,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
-
+@yield('css')
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('front/style.css')}}">
 

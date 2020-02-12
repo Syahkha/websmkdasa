@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Model\Kategori;
-use App\Model\SubKategori;
+
 
 class frontendController extends Controller
 {
@@ -16,10 +16,14 @@ class frontendController extends Controller
         $menu=Kategori::where('edit', 'N')->get();
         $galeri=DB::table('galeri')->get();
         $studi=DB::table('jurusan')->get();
+        $post=DB::table('artikel')
+        ->join('users', 'users.id', '=', 'artikel.id_admin')
+        ->select('artikel.*', 'users.name')
+        ->orderBy('tanggal', 'desc')->take(2)->get();
 
 
         return view('front.konten',
-            ['setting'=>$websetting, 'galeri'=>$galeri,'studi'=>$studi],
+            ['setting'=>$websetting, 'galeri'=>$galeri,'studi'=>$studi,'post'=>$post],
             ['menu'=>$menu]
            
         );

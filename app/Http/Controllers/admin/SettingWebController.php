@@ -37,7 +37,7 @@ class SettingWebController extends Controller
 
     function inputGaleri(Request $request){
         $request->validate([
-            'nama_galeri'=>'required|image|mimes:jpg,jpeg,png'
+            'nama_galeri'=>'required|image|mimes:jpg,jpeg,png|dimensions:max_height=900,max_width=1920'
         ]);
         $galeri=$request->file('nama_galeri');
         $nama=$request->file('nama_galeri')->getClientOriginalName();

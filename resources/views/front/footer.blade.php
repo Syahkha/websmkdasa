@@ -1,6 +1,6 @@
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
+    <footer class="footer-area" id="footer">
         <div class="main-footer-area section-padding-100-0">
             <div class="container">
                 <div class="row">
@@ -16,8 +16,10 @@
                             <p>{{$data->profil}}</p>
                            
                             <div class="footer-social-info">
-                                <a href="https://facebook/{{$data->facebook}}"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://{{$data->facebook}}"><i class="fa fa-facebook"></i></a>
+                                <a href="https://{{$data->instagram}}"><i class="fa fa-instagram"></i></a>
+                                <a href="https://{{$data->twitter}}"><i class="fa fa-twitter"></i></a>
+                                <a href="https://{{$data->youtube}}"><i class="fa fa-youtube"></i></a>
                             </div>
                             @endforeach
                         </div>
@@ -32,7 +34,7 @@
                             @foreach($setting as $websetting)
                             <div class="single-contact d-flex mb-30">
                                 <i class="icon-placeholder"></i>
-                                <p>{{$websetting->alamat}} </p>
+                                <p>{{$websetting->alamat}} <br> Kota {{$websetting->kota}} </p>
                             </div>
                             <div class="single-contact d-flex mb-30">
                                 <i class="icon-telephone-1"></i>

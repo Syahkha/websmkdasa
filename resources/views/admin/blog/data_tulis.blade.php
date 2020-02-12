@@ -70,13 +70,15 @@ Data Tulis
                         <td>{{$no++}}</td>
                         <td>{{$post->judul}}</td>
                         <td>{{$post->tanggal}}</td>
+                     
                         <td>{{$post->kategori}}</td>
+                        
                         <td>{{$post->name}}</td>
                         <td>
                             <button class="btn btn-sm " data-toggle="modal" data-target="#l{{$post->id}}"><span
                                     data-toggle="tooltip" title="Lihat Artikel" class="fa fa-eye"></span></button>
                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                data-target="#p{{$post->id}}"" ><span data-toggle=" tooltip" title="Edit Artikel"
+                                data-target="#p{{$post->id}}"><span data-toggle=" tooltip" title="Edit Artikel"
                                 class="fa fa-edit fa-fw"></span></button>
                             <a href="{{url('hapus-artikel').'/'.$post->id}}" class="btn btn-danger btn-sm"
                                 data-toggle="tooltip" title="Hapus Artikel"><span class="fa fa-trash"></span></a>
