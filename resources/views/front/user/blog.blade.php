@@ -3,7 +3,6 @@
 Blog
 @endsection
 @section('konten')
-<<<<<<< HEAD
 @foreach($setting as $data)
 <div class="breadcumb-area bg-img" style="background-image: url({{asset('source/banner/'.$data->banner)}});">
     @endforeach
@@ -29,8 +28,6 @@ Blog
                                 <a href="#" class="post-title">{{$data->judul}}</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta">
-                                    <p>Penulis : <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
-=======
 <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
         <div class="bradcumbContent">
             <h2>The News</h2>
@@ -79,19 +76,16 @@ Blog
                                     <p>{!!substr($data->artikel, 0, 170)!!}...</p>
                                     <!-- Read More btn -->
                                     <a href="#" class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
->>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
+                                    <p>Penulis <a href="#">{{$data->name}}</a> | <a href="#">{{$data->tanggal}}</a> </p>
                                 </div>
                                 <!-- Post Excerpt -->
-                                <p>{!!substr($data->artikel, 0, 750)!!}...</p>
+                                <p>{!!substr($data->artikel, 0, 1000)!!}...</p>
                                 <!-- Read More btn -->
-                                <a href="{{url('/'.$data->judul_url)}}"
+                                <a href="{{url('/detailartikel/'.$data->judul_url)}}"
                                     class="btn academy-btn btn-sm mt-15">Baca Selengkapnya</a>
                             </div>
-<<<<<<< HEAD
-=======
                             @endforeach
 
->>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
                         </div>
                         @endforeach
                     </div>
@@ -101,7 +95,9 @@ Blog
                     style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
                     <nav>
                         <ul class="pagination">
-                            <li class="page-item active">{{ $artikel->links() }}</li>
+                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item"><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#">03</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -111,40 +107,12 @@ Blog
                 <div class="academy-blog-sidebar">
                     <!-- Blog Post Widget -->
                     <div class="blog-post-search-widget mb-30">
-                        <form action="/cariartikel" method="get">
-                            <input type="text" name="cari" placeholder="Search">
+                        <form action="#" method="post">
+                            <input type="search" name="search" id="Search" placeholder="Search">
                             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </div>
 
-<<<<<<< HEAD
-                    <!-- Blog Post Catagories -->
-                    <div class="blog-post-categories mb-30">
-                        <h5>Categories</h5>
-                        <ul>
-                            @foreach($kategori as $k)
-                            <li><a href="{{url('/blog/'.$k->id)}}">{{$k->kategori}}</a></li>
-                            @endforeach
-                        </ul>   
-                    </div>
-
-                    <!-- Latest Blog Posts Area -->
-                    <div class="latest-blog-posts mb-30">
-                        <h5>Baca Juga</h5>
-                        <!-- Single Latest Blog Post -->
-                        @foreach ($bacajuga as $item)
-                        <div class="single-latest-blog-post d-flex mb-30">
-
-                            <div class="latest-blog-post-thumb">
-                                <img src="{{asset('source/artikel/'.$item->gambar)}}" alt="">
-                            </div>
-                            <div class="latest-blog-post-content">
-                                <a href="#" class="post-title">
-                                    <h6>{!!substr($item->judul, 0, 15)!!}...</h6>
-                                </a>
-                                <a href="#" class="post-date">{{ $item->tanggal }}</a>
-                            </div>
-=======
                         <!-- Blog Post Catagories -->
                         <div class="blog-post-categories mb-30">
                             <h5>Categories</h5>
@@ -208,7 +176,6 @@ Blog
                                 </div>
                             </div>
                         </div>
->>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
 
                         </div>
                         @endforeach
