@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Model\Kategori;
 
+
 class frontendController extends Controller
 {
 
@@ -35,8 +36,7 @@ class frontendController extends Controller
         $artikel = DB::table('artikel')
             ->join('users', 'users.id', '=', 'artikel.id_admin')
             ->select('artikel.*', 'users.name')
-            ->orderBy('tanggal', 'desc')
-            ->paginate(3);
+            ->get();
         
         $bacajuga = DB::table('artikel')
         ->inRandomOrder()
@@ -74,7 +74,7 @@ class frontendController extends Controller
         ->get();
     	$artikellain = DB::table('artikel')
     	->inRandomOrder()
-    	->limit(4)
+    	->limit(3)
     	->get();
 
     	$kategori = DB::table('kategori')->get();
@@ -87,76 +87,6 @@ class frontendController extends Controller
             'artikel'=>$artikel
 
         ]);
-    }
-
-    function blog_kategori($url_kategori,Request $request)
-    {
-        $websetting=DB::table('setting')->get();
-        $id=$request->id;
-        $artikel = DB::table('artikel')
-        ->leftjoin('users', 'users.id', '=', 'artikel.id_admin')
-        ->select('artikel.*', 'users.*')
-        ->where('idkategori',$url_kategori)
-        ->orderBy('tanggal', 'desc')
-        ->paginate(3);
-        $nav = DB::table('kategori')
-        ->where(['edit'=>'N',"show"=>"Y"])
-        ->get();
-    	$artikellain = DB::table('artikel')
-    	->inRandomOrder()
-    	->limit(3)
-    	->get();
-
-    	$kategori = DB::table('kategori')->get();
-    	$websetting = DB::table('setting')->limit(1)->get();
-        $menu=Kategori::where('edit', 'N')->get();
-        $bacajuga = DB::table('artikel')
-        ->inRandomOrder()
-        ->limit(4)
-            ->get();
-
-       
-
-
-    	return view('front.user.kategori_url',[
-            'setting'=>$websetting,
-            'menu'=>$menu,
-            'artikel'=>$artikel,
-            'kategori'=>$kategori,
-            'bacajuga' =>$bacajuga
-
-        ]);
-    }
-
-    public function cariartikel(Request $request){
-    	$kategori = DB::table('kategori')
-    	->get();
-    	$nav = DB::table('kategori')
-        ->where(['edit'=>'N',"show"=>"Y"])
-        ->get();
-        $artikel = DB::table('artikel')
-        ->join('users', 'users.id', '=', 'artikel.id_admin')
-    	->where('judul','like','%'.$request->cari.'%')
-    	->get();
-        
-        $menu=Kategori::where('edit', 'N')->get();
-        $bacajuga = DB::table('artikel')
-        ->inRandomOrder()
-        ->limit(4)
-            ->get();
-        $websetting = DB::table('setting')
-    	->limit(1)
-    	->get();
-    	
-    	return view ('front/user/hasilcari',[
-            'cari'=>$request->cari,
-    		'setting'=>$websetting,
-            'artikel'=>$artikel,
-            'kategori'=>$kategori,
-            'menu'=>$menu,
-            'bacajuga' =>$bacajuga,
-            'nav' =>$nav
-    	]);
     }
     
 }

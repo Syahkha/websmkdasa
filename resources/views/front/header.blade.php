@@ -46,7 +46,7 @@
                             <li><a href="{{url('/')}}">Home</a></li>
                             <li><a href="#profil">Profil</a></li>
                             <li><a href="">PPDB</a></li>
-                            <li><a href="{{url('blog')}}">Berita</a></li>
+                            <li><a href="{{url('tampilblog')}}">Berita</a></li>
 
                             @foreach($menu as $m)
                             
