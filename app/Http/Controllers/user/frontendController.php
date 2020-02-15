@@ -5,13 +5,17 @@ namespace App\Http\Controllers\user;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
 use App\Model\Kategori;
+=======
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
 
 class frontendController extends Controller
 {
 
     function index(){
         $websetting=DB::table('setting')->get();
+<<<<<<< HEAD
         $menu=Kategori::where('edit', 'N')->get();
         $galeri=DB::table('galeri')->get();
         $studi=DB::table('jurusan')->get();
@@ -26,15 +30,19 @@ class frontendController extends Controller
             ['menu'=>$menu]
            
         );
+=======
+        return view('front.konten',[
+            'setting'=>$websetting
+        ]);
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
     }
     function blog(){
         $websetting=DB::table('setting')->get();
-        $menu=Kategori::where('edit', 'N')->get();
-        $kategori=Kategori::get();
      
         $artikel = DB::table('artikel')
             ->join('users', 'users.id', '=', 'artikel.id_admin')
             ->select('artikel.*', 'users.name')
+<<<<<<< HEAD
             ->orderBy('tanggal', 'desc')
             ->paginate(3);
         
@@ -84,8 +92,13 @@ class frontendController extends Controller
     	return view('front.user.detail_artikel',[
             'setting'=>$websetting,
             'menu'=>$menu,
-            'artikel'=>$artikel
+=======
+            ->get();
 
+        return view('front.user.blog',[
+            'setting'=>$websetting,
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
+            'artikel'=>$artikel
         ]);
     }
 

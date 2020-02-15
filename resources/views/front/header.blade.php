@@ -44,6 +44,7 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="{{url('/')}}">Home</a></li>
+<<<<<<< HEAD
                             <li><a href="#profil">Profil</a></li>
                             <li><a href="">PPDB</a></li>
                             <li><a href="{{url('blog')}}">Berita</a></li>
@@ -56,6 +57,17 @@
                           
                             @endforeach
                             <li><a href="#footer">Kontak Kami</a></li>
+=======
+                            <li class="cn-dropdown-item has-down pr12"><a href="#">Profil</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Galeri</a></li>
+                                        </ul>
+                                    <span class="dd-trigger"></span><span class="dd-arrow"></span></li>
+                            <li><a href="#course">Program Keahlian</a></li>
+                            <li><a href="">PPDB</a></li>
+                            <li><a href="{{url('tampilblog')}}">Berita</a></li>
+                            <li><a href="#">Kontak Kami</a></li>
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
                         </ul>
                     </div>
                     <!-- Nav End -->
@@ -64,9 +76,7 @@
                 <!-- Calling Info -->
                 <div class="calling-info">
                     <div class="call-center">
-                    @foreach($setting as $data)
-                        <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>{{$data->kontak1}}</span></a>
-                    @endforeach
+                        <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
                     </div>
                 </div>
             </nav>

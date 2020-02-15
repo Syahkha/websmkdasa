@@ -4,35 +4,38 @@ Blog
 @endsection
 @section('konten')
 <div class="container-fluid">
-    @if (Session('psn'))
-    <div class="alert alert-primary alert-dismissible" role="alert">
-        <p align="center">{{Session('psn')}}</p>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    @endif
-    @if ($errors->any())
-    @foreach ($errors->all() as $er)
-    <ul>
+@if (Session('psn'))
         <div class="alert alert-primary alert-dismissible" role="alert">
-            <li>{{$er}}</li>
+            <p align="center">{{Session('psn')}}</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">×</span>
+            </button>
         </div>
-        @endforeach
-    </ul>
-    @endif
-    <!-- KATEGORI -->
+        @endif
+        @if ($errors->any())
+        @foreach ($errors->all() as $er)
+        <ul>
+            <div class="alert alert-primary alert-dismissible" role="alert">
+                <li>{{$er}}</li>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+            </div>
+            @endforeach
+        </ul>
+        @endif
     <div class="card shadow mb-3">
         <a href="#collapseOne" class="d-block card-header py-3" data-toggle="collapse" role="button"
             aria-expanded="true" aria-controls="collapseCardExample">
             <div class="row">
                 <div class="col font-weight-bold">
-                    KATEGORI
+              
+                
+                    Kategori
+                
                 </div>
             </div>
         </a>
+
         <div id="collapseOne" class="collapse">
             <div class="card-body">
                 <div class="row">
@@ -52,11 +55,12 @@ Blog
                                     <th scope="row">{{$no++}}</th>
                                     <td>{{$item->kategori}}</td>
                                     <td>
-                                        <button type="button" data-toggle="modal" data-target="#l{{$item->id}}"
-                                            class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></button>
                                         <a href="{{url('hapus-kategori').'/'.$item->id}}"
                                             class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
+                                        <button type="button" data-toggle="modal" data-target="#l{{$item->id}}"
+                                            class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></button>
                                     </td>
+
                                 </tr>
                             </tbody>
                             <div class="modal fade" id="l{{$item->id}}" tabindex="-1" role="dialog"
@@ -87,6 +91,7 @@ Blog
                                                         class="form-check-input" id="">
                                                     <div class="form-check-label">Tandai Sebagai Menu</div>
                                                     @endif
+
                                                 </div>
                                         </div>
                                         <div class="modal-footer">
@@ -108,7 +113,9 @@ Blog
                                 <label for="exampleInputEmail1">Kategori</label>
                                 <input type="text" name="kategori" class="form-control" placeholder="Isi Kategori"
                                     required>
+
                             </div>
+
                             <div class="form-group form-check">
                                 <input type="checkbox" name="menu" value="N" class="form-check-input"
                                     id="exampleCheck1">
@@ -121,8 +128,6 @@ Blog
             </div>
         </div>
     </div>
-    <!-- END KATEGORI -->
-    <!-- ARTIKEL -->
     <div class="card shadow mb-3">
         <div class="card-header py-3">
             <h5 class="m-0 font-weight-bold text-primary"> Menulis Artikel</h5>
@@ -170,7 +175,7 @@ Blog
             </form>
         </div>
     </div>
-    <!-- END ARTIKEL -->
+
 </div>
 @endsection
 @section('js')

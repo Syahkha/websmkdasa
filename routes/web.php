@@ -33,11 +33,6 @@ Route::post('edit-user','user\User@editU');
 Route::get('setweb','admin\SettingWebController@setweb');
 Route::post('update-setting','admin\SettingWebController@updateSetting');
 Route::post('insert-setweb','admin\SettingWebController@inputSetweb');
-Route::post('tambah-galeri','admin\SettingWebController@inputGaleri');
-Route::get('hapus-galeri/{id_galeri}/{nama_galeri}','admin\SettingWebController@hapusGaleri');
-Route::post('tambah-studi','admin\SettingWebController@inputStudi');
-Route::post('update-studi','admin\SettingWebController@updateStudi');
-Route::get('hapus-studi/{id}','admin\SettingWebController@hapusStudi');
 
 // data siswa/siswi
 // =======================================================
@@ -77,10 +72,13 @@ Route::get('lock-artikel/{id}/{y}','admin\BlogController@lockA');
 Route::post('update-artikel','admin\BlogController@updateArtikel');
 Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');
 Route::post('cari-artikel','admin\BlogController@cari');
+<<<<<<< HEAD
 Route::post('sub-kategori','admin\BlogController@subKategori');
 Route::post('update-sub','admin\BlogController@upSK');
 Route::get('hapus-Skategori/{id}','admin\BlogController@hapusSK');
 Route::get('/cariartikel','user\frontendcontroller@cariartikel');
+=======
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
 
 // tahun
 Route::get('tahun','admin\tahunController@tahun');
@@ -92,5 +90,9 @@ Route::get('/{judul}','user\frontendcontroller@detail_artikel');
 Route::get('blog/{idkategori}','user\frontendcontroller@blog_kategori');
 
 //excel 
+<<<<<<< HEAD
 Route::get('download-excelsiswa','user\user@dexcelsiswa');
 
+=======
+Route::get('download-excelsiswa','user\user@dexcelsiswa');
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa

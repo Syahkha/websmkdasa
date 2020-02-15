@@ -19,12 +19,12 @@ class SettingWebController extends Controller
         $this->banpath=public_path('/source/banner');
         $this->icopath=public_path('/source/icon');
         $this->logpath=public_path('/source/logo');
-        $this->galpath=public_path('/source/galeri');
 
     }
     public function setweb(){
 
         $data=DB::select('select * from setting');
+<<<<<<< HEAD
         $galeri=DB::table('galeri')->get();
         $studi=DB::table('jurusan')->get();
         return view('user.setting_web',[
@@ -90,13 +90,11 @@ class SettingWebController extends Controller
     }
 
     function hapusStudi($id){
+=======
+>>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
        
-        $data=DB::delete('delete from jurusan where id=?',[$id]);
-        if($data){
-            return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Berhasil Dihapus");
-        }else{
-            return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Gagal Dihapus");
-        }
+            return view('user.setting_web',['data'=>$data]);
+        
     }
 
     function inputSetweb(Request $request){
@@ -107,6 +105,19 @@ class SettingWebController extends Controller
         ]);
         
         $id=$request->id;
+        $name=$request->name;
+        $email=$request->email;
+        $kontak1=$request->kontak1;
+        $kontak2=$request->kontak2;
+        $alamat=$request->alamat;
+        $provinsi=$request->provinsi;
+        $kota=$request->kota;
+        $facebook=$request->facebook;
+        $instagram=$request->instagram;
+        $twitter=$request->twitter;
+        $youtube=$request->youtube;
+        $psb=$request->psb; 
+        $profil=$request->profil;
         //banner
         $bn=$request->file('banner');
         $nama=$request->file('banner')->getClientOriginalName();
@@ -123,24 +134,8 @@ class SettingWebController extends Controller
         $icopath=$this->icopath;
         $icon->move($icopath,$nc);
 
-        $setweb=SettingModel::insert([
-            'webname'=>$request->name,
-            'profil'=>$request->profil,
-            'email'=>$request->email,
-            'kontak1'=>$request->kontak1,
-            'kontak2'=>$request->kontak2,
-            'alamat'=>$request->alamat,
-            'kota'=>$request->kota,
-            'provinsi'=>$request->provinsi,
-            'facebook'=>$request->facebook,
-            'twitter'=>$request->twitter,
-            'instagram'=>$request->instagram,
-            'youtube'=>$request->youtube,
-            'psb'=>$request->psb,
-            'banner'=>$nama,
-            'logo'=>$nl,
-            'icon'=>$nc,
-        ]);
+        $setweb=DB::insert('insert into setting (webname,email,kontak1,kontak2,alamat,provinsi,kota,facebook,instagram,twitter,youtube,psb,profil,banner,logo,icon,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        [$name,$email,$kontak1,$kontak2,$alamat,$provinsi,$kota,$facebook,$instagram,$twitter,$youtube,$psb,$profil,$nama,$nl,$nc,$id]);
         if($setweb){
             return redirect()->action('admin\SettingWebController@setweb')->with('msg',"Berhasil Disimpan");
         }else{
