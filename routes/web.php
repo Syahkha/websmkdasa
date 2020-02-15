@@ -72,27 +72,18 @@ Route::get('lock-artikel/{id}/{y}','admin\BlogController@lockA');
 Route::post('update-artikel','admin\BlogController@updateArtikel');
 Route::get('hapus-artikel/{id}','admin\BlogController@hapusA');
 Route::post('cari-artikel','admin\BlogController@cari');
-<<<<<<< HEAD
 Route::post('sub-kategori','admin\BlogController@subKategori');
 Route::post('update-sub','admin\BlogController@upSK');
 Route::get('hapus-Skategori/{id}','admin\BlogController@hapusSK');
 Route::get('/cariartikel','user\frontendcontroller@cariartikel');
-=======
->>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
 
 // tahun
 Route::get('tahun','admin\tahunController@tahun');
 
 //front
 Route::get('/','user\frontendcontroller@index');
-Route::get('blog','user\frontendcontroller@blog');
-Route::get('/{judul}','user\frontendcontroller@detail_artikel');
-Route::get('blog/{idkategori}','user\frontendcontroller@blog_kategori');
+Route::get('tampilblog','user\frontendcontroller@blog');
 
 //excel 
-<<<<<<< HEAD
 Route::get('download-excelsiswa','user\user@dexcelsiswa');
-
-=======
-Route::get('download-excelsiswa','user\user@dexcelsiswa');
->>>>>>> parent of dbb0638... Merge branch 'master' of https://github.com/Syahkha/websmkdasa
+Route::get('detailartikel/{judul}','user\frontendcontroller@detail_artikel');
