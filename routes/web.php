@@ -80,14 +80,17 @@ Route::post('cari-artikel','admin\BlogController@cari');
 Route::post('sub-kategori','admin\BlogController@subKategori');
 Route::post('update-sub','admin\BlogController@upSK');
 Route::get('hapus-Skategori/{id}','admin\BlogController@hapusSK');
+Route::get('/cariartikel','user\frontendcontroller@cariartikel');
 
 // tahun
 Route::get('tahun','admin\tahunController@tahun');
 
 //front
 Route::get('/','user\frontendcontroller@index');
-Route::get('tampilblog','user\frontendcontroller@blog');
+Route::get('blog','user\frontendcontroller@blog');
+Route::get('/{judul}','user\frontendcontroller@detail_artikel');
+Route::get('blog/{idkategori}','user\frontendcontroller@blog_kategori');
 
 //excel 
 Route::get('download-excelsiswa','user\user@dexcelsiswa');
-Route::get('detailartikel/{judul}','user\frontendcontroller@detail_artikel');
+
